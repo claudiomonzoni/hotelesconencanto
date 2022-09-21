@@ -1,0 +1,41 @@
+@use "variables" as *;
+
+.anima {
+    -webkit-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+  }
+.limite{
+  margin-inline: auto;
+  width: min(100% - 5rem, 1920px);
+}
+  .navbar{
+   display:  flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   align-items: center;
+   .logo img{
+     width: 100%;
+     height: auto;
+     @include cel {
+       flex:1;
+       padding: 1rem;
+     }
+   }
+   ul{
+    display: inherit;
+    align-items: center;
+    @include cel{
+      border-top: solid 1px $azul;
+      flex: 1;
+      justify-content: center;
+    }
+    li{
+      padding: 2rem;
+      @include cel{
+        padding: 1rem 1rem;
+
+      }
+    }
+   }
+  }

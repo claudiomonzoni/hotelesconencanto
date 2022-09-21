@@ -1,0 +1,43 @@
+//colores
+$azul: #13419B;
+$naranja: #E76128;
+$verde: #4CCBA6;
+$gris: #4E4E4E;
+$beige: #F2EEE3;
+
+//media query
+$cel: 479px;
+$nocel: 479px;
+$tableta: 768px;
+$tableta-land: 1024px;
+$hd: 1600px;
+
+@mixin cel {
+  @media (max-width: #{$cel}) {
+    @content;
+  }
+}
+
+@mixin nocel {
+  @media (min-width: #{$nocel}) {
+    @content;
+  }
+}
+
+@mixin tableta_land {
+  @media (min-width: #{$tableta-land}) and (max-width: #{$hd - 1px}) {
+    @content;
+  }
+}
+
+@mixin tableta {
+  @media (min-width: #{$tableta - 1px}) and (max-width: #{$tableta-land - 1px}) {
+    @content;
+  }
+}
+
+@mixin hd {
+  @media (min-width: #{$hd}) {
+    @content;
+  }
+}

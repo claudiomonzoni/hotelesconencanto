@@ -6,6 +6,7 @@ export interface Props {
 }
 
 const { href, title, body } = Astro.props;
+
 ---
 
 <li class="link-card">
@@ -20,6 +21,7 @@ const { href, title, body } = Astro.props;
 	</a>
 </li>
 <style lang="scss">
+	@import "../estilos/variables.scss";
 	:root {
 		--link-gradient: linear-gradient(45deg, #4f39fa, #da62c4 30%, var(--color-border) 60%);
 	}
@@ -28,7 +30,7 @@ const { href, title, body } = Astro.props;
 		list-style: none;
 		display: flex;
 		padding: 0.15rem;
-		background: $azul;
+		background: $naranja;
 		background-size: 400%;
 		border-radius: 0.5rem;
 		background-position: 100%;
