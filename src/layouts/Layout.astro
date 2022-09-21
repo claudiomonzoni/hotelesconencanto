@@ -1,60 +1,79 @@
 ---
 export interface Props {
-	title: string;
+	titulo: string;
+	descripcion: string;
 }
 
-const { title } = Astro.props;
+const { titulo, descripcion } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<meta name="description" content={descripcion}>
+		<title>{titulo}</title>
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
-<style>
-	:root {
-		--font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
-		--font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
-		--font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
-
-		--color-text: hsl(12, 5%, 4%);
-		--color-bg: hsl(10, 21%, 95%);
-		--color-border: hsl(17, 24%, 90%);
-	}
-
-	html {
-		font-family: system-ui, sans-serif;
-		font-size: var(--font-size-base);
-		color: var(--color-text);
-		background-color: var(--color-bg);
-	}
-
-	body {
-		margin: 0;
-	}
 
 
-</style>
+<style is:global lang="scss">
+//colores
+$azul: #13419B;
+$naranja: #E76128;
+$verde: #4CCBA6;
+$gris: #4E4E4E;
 
-<style is:global>
-	h1 {
-		font-size: var(--font-size-xl);
-	}
+//reset
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
 
-	h2 {
-		font-size: var(--font-size-lg);
-	}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+h1,
+h2 {
+  font-weight: 700;
+}
+h3 {
+  font-weight: 300;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+a{
+  text-decoration: none;
+}
 </style>
