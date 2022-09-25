@@ -1,57 +1,104 @@
 @use "variables" as *;
 @use "componentes" as *;
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;800&display=swap");
 
 html {
-    box-sizing: border-box;
-    font-size: clamp(16px, 2vw, 22px);
-    font-family: Montserrat;
+  box-sizing: border-box;
+  font-size: clamp(16px, 1.5vw, 22px);
+  color: $gris;
+  font-family: Montserrat;
+  background: rgb(242, 238, 227);
+  background: linear-gradient(180deg, $beige 0%, #ffffff 100%) no repeat;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+h1,
+h2 {
+  color: $azul;
+  padding:1rem 0;
+  font-weight: 700;
+}
+h1{
+  font-size: clamp(3em, 5vw, 90vw);
+}
+h3 {
+  color: $azul;
+  font-weight: 300;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+a {
+  text-decoration: none;
+}
+a:hover,
+.selected {
+  font-weight: bold;
+  color: $naranja;
+  @extend .anima;
+}
+
+//contenedor
+#hero{
+  background: url(./public/fondo-palmas.webp) no-repeat;
+  background-size: contain;
+  background-position: top right;
+}
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  @include cel{
+    .izq, .der{
+      flex: auto!important;
+    }
+    .izq{
+      order: 2!important;
+    }
+    .der{
+      order: 1!important;
+    }
   }
-  
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
+
+  .izq {
+    flex: 1;
+    display: inherit;
+    justify-content: center;
+    align-items: center;
+    .bandeja{
+      width: 90%;
+    }
   }
-  
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  ol,
-  ul {
-    margin: 0;
-    padding: 0;
-    font-weight: normal;
+  .der{
+    display: inherit;
+    flex: 1;
+    justify-content: center;
   }
-  
-  h1,
-  h2 {
-    font-weight: 700;
-  }
-  h3 {
-    font-weight: 300;
-  }
-  
-  ol,
-  ul {
-    list-style: none;
-  }
-  
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-  a{
-    text-decoration: none;
-  }
-  a:hover,  .selected{
-    font-weight: bold;
-    color: $naranja;
-    @extend .anima;
-  }
+}

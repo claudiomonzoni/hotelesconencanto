@@ -1,13 +1,30 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Filtro from '../components/Filtro.astro';
 import Card from '../components/Card.astro';
+
 ---
 
 <Layout titulo="Hoteles de Zihuatanejo" descripcion="Reserva hoteles baratos, comodos y bien ubicados directamente con ellos sin intermediarios">
-	<main>
-	Aqui el main
-	
-	<Card title="titulo" body="no se" href="#">
-	</Card>
-	</main>
+	<section id="hero">
+		<div class="hero limite">
+
+			<div class="izq">
+				<div class="bandeja">
+					<h1>Hoteles de Zihuatanejo</h1>
+					<p>
+						<b>Reserva hoteles accesibles</b>, comodos y bien ubicados <b>directamente con ellos</b> sin intermediarios.
+					</p>
+					<a href="#hoteles" class="btn">Ver hoteles</a>
+				</div>
+			</div>
+			<div class="der">
+				<img src="./public/hoteles-de-zihuatanejo-economicos-hero-image.webp" alt="Hoteles de Ixtapa Zihuatanejo">
+			</div>
+		</div>
+	</section>
+	<Filtro></Filtro>
+	<section class="antes-footer ">
+		<h2 style = "border: solid; height: 50vh" >Que pedo bandita</h2>
+	</section>
 </Layout>

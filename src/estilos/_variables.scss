@@ -12,6 +12,7 @@ $tableta: 768px;
 $tableta-land: 1024px;
 $hd: 1600px;
 
+
 @mixin cel {
   @media (max-width: #{$cel}) {
     @content;
@@ -41,3 +42,5 @@ $hd: 1600px;
     @content;
   }
 }
+//extra
+$radio: 0.6rem;
