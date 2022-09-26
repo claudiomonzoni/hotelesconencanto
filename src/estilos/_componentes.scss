@@ -8,8 +8,11 @@
 .limite {
   margin-inline: auto;
   width: min(100% - 5rem, 1920px);
+  @include cel{
+    width: min(100% - 2.5rem, 1920px);
+  }
 }
-.antes-footer{
+.antes-footer {
   transform: translateY(20%);
 }
 .navbar {
@@ -62,14 +65,14 @@
   @include botones($verde);
 }
 
-footer{
-  background:url(./public/fondo-footer.webp) $naranja;
+footer {
+  background: url(./public/fondo-footer.webp) $naranja;
   padding: 20% 0 3rem;
 
-  @include cel{
+  @include cel {
     padding: 40% 0 2.7rem;
   }
-  #footer{
+  #footer {
     background: $azul;
     border-radius: $radio;
     display: flex;
@@ -80,81 +83,121 @@ footer{
     gap: 2rem;
     padding: 2rem;
     flex-wrap: wrap;
-    img{
+    img {
       width: 15%;
       height: auto;
-      @include cel{
+      @include cel {
         width: 60%;
       }
     }
-    ul{
+    ul {
       display: inherit;
       flex-wrap: wrap;
       justify-content: center;
       gap: 2rem;
-      a{
+      a {
         font-weight: lighter;
         color: #fff;
       }
     }
-    hr{
+    hr {
       width: 100%;
     }
-    #derechos{
+    #derechos {
       color: #fff;
-      font-size: .7rem;
+      font-size: 0.7rem;
     }
-    #pez-pie{
+    #pez-pie {
       position: absolute;
-      bottom: calc(50% -  60px);
+      bottom: calc(50% - 60px);
       width: min(120px, 1920px);
-      @include cel{
+      @include cel {
         width: min(110px, 1920px);
-        bottom: calc(30% -  60px);
+        bottom: calc(30% - 60px);
       }
     }
   }
 }
-#filtro{
+#filtro {
   display: flex;
   flex-wrap: wrap;
   background: $azul;
   padding: 2rem;
   border-radius: $radio;
   margin-top: 2rem;
-  h4{
+  h4 {
     flex: 1 0 100%;
     color: $naranja;
     text-align: center;
     font-weight: bold;
   }
-  hr{
+  hr {
     flex: 1 0 100%;
     background: $verde;
   }
-  ul{
+  ul {
     justify-content: space-evenly;
     flex: 1 0 100%;
     flex-wrap: wrap;
     gap: 2rem;
     display: inherit;
-    li{
+    li {
       display: inherit;
       align-items: center;
-      @include cel{
-        font-size: .8rem;
+      @include cel {
+        font-size: 0.8rem;
         flex-wrap: wrap;
         flex: 0 0 39%;
         justify-content: center;
-       gap:.6rem;
-       text-align: center;
+        gap: 0.6rem;
+        text-align: center;
       }
     }
   }
-  img{
+  img {
     width: 40px;
   }
-  a{
+  a {
     color: #fff;
+  }
+}
+#ofertas {
+  .bandeja {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 30%;
+    margin-top: 2rem;
+    padding: 0 3rem 2rem;
+    gap: 1rem;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    @include cel {
+      grid-auto-columns: 80%;
+      padding-right: 1.2rem;
+    }
+    .oferta {
+      scroll-snap-align: end;
+      img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+      }
+      color: #fff;
+
+      h3 {
+        color: $naranja;
+        font-weight: bold;
+      }
+      p {
+        padding: 1rem 0;
+      }
+      .bandeja-oferta {
+        background: $azul;
+        border-radius: $radio;
+        padding: 1.5rem;
+        translate: 0 -6%;
+      }
+    }
   }
 }
