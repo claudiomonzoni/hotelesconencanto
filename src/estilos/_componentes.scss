@@ -8,7 +8,7 @@
 .limite {
   margin-inline: auto;
   width: min(100% - 5rem, 1920px);
-  @include cel{
+  @include cel {
     width: min(100% - 2.5rem, 1920px);
   }
 }
@@ -66,10 +66,14 @@
 }
 
 footer {
+  position: relative;
   background: url(./public/fondo-footer.webp) $naranja;
   padding: 20% 0 3rem;
-
+  margin-top: -17%;
+  z-index: -2;
+  
   @include cel {
+    margin-top: -30%;
     padding: 40% 0 2.7rem;
   }
   #footer {
@@ -161,17 +165,31 @@ footer {
     color: #fff;
   }
 }
+
+
 #ofertas {
   .bandeja {
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: 30%;
     margin-top: 2rem;
-    padding: 0 3rem 2rem;
+    padding: 0 2.5rem 2rem;
     gap: 1rem;
     overflow-x: auto;
     overscroll-behavior-inline: contain;
     scroll-snap-type: inline mandatory;
+    &::-webkit-scrollbar {
+      width: 10px;
+      height: 15px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $azul;
+      border-radius: $radio;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
     @include cel {
       grid-auto-columns: 80%;
       padding-right: 1.2rem;
@@ -181,7 +199,9 @@ footer {
       img {
         width: 100%;
         aspect-ratio: 16 / 9;
-        object-fit: cover;
+        object-fit: cover;    
+        position: relative;
+        z-index: -1;
       }
       color: #fff;
 
@@ -196,7 +216,7 @@ footer {
         background: $azul;
         border-radius: $radio;
         padding: 1.5rem;
-        translate: 0 -6%;
+        margin-top: -3%;
       }
     }
   }
