@@ -71,7 +71,7 @@ footer {
   padding: 20% 0 3rem;
   margin-top: -17%;
   z-index: -2;
-  
+
   @include cel {
     margin-top: -30%;
     padding: 40% 0 2.7rem;
@@ -160,13 +160,12 @@ footer {
   }
   img {
     width: 50px;
-    padding: .5rem;
+    padding: 0.5rem;
   }
   a {
     color: #fff;
   }
 }
-
 
 #ofertas {
   .bandeja {
@@ -200,7 +199,7 @@ footer {
       img {
         width: 100%;
         aspect-ratio: 16 / 9;
-        object-fit: cover;    
+        object-fit: cover;
         position: relative;
         z-index: -1;
       }
@@ -220,5 +219,63 @@ footer {
         margin-top: -3%;
       }
     }
+  }
+}
+
+#hoteles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2.5rem 0;
+  .hotel {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 10% 1fr 10%;
+    max-width: 30%;
+    flex: 1 0 30%;
+
+    img {
+      grid-column: 1 / 2 span;
+      grid-row: 1 / -1;
+      aspect-ratio: 8 / 14;
+      object-fit: cover;
+      position: relative;
+      z-index: -1;
+    }
+
+    .bandeja {
+      grid-column: 2 / -1;
+      grid-row: 2;
+      padding: 2rem;
+      border-radius: $radio;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      h2 {
+        color: $naranja;
+        font-size: 1.3rem;
+      }
+      p {
+        padding-bottom: 1rem;
+      }
+      background: $beige;
+    }
+
+    @include cel {
+      max-width: 100%;
+      flex: 1 0 100%;
+     
+      &:nth-child(2n + 2){
+        img {
+          grid-column: 2 / -1;
+        }
+        .bandeja {
+          grid-column: 1 / 2 span;
+        }
+      }
+
+      // flex: 1 0 50%!important;
+    }
+
   }
 }
