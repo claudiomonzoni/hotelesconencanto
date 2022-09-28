@@ -35,14 +35,14 @@ ul {
 
 h1,
 h2 {
-  padding:1rem 0;
+  padding: 1rem 0;
   font-weight: 700;
 }
-h1{
+h1 {
   color: $azul;
   font-size: clamp(3em, 5vw, 90vw);
 }
-h2{
+h2 {
   color: $verde;
   font-size: clamp(2em, 3vw, 60vw);
 }
@@ -72,7 +72,7 @@ a:hover,
 }
 
 //contenedor
-#hero{
+#hero {
   background: url(/fondo-palmas.webp) no-repeat;
   background-size: contain;
   background-position: top right;
@@ -80,15 +80,16 @@ a:hover,
 .hero {
   display: flex;
   flex-wrap: wrap;
-  @include cel{
-    .izq, .der{
-      flex: auto!important;
+  @include cel {
+    .izq,
+    .der {
+      flex: auto !important;
     }
-    .izq{
-      order: 2!important;
+    .izq {
+      order: 2 !important;
     }
-    .der{
-      order: 1!important;
+    .der {
+      order: 1 !important;
     }
   }
 
@@ -97,19 +98,19 @@ a:hover,
     display: inherit;
     justify-content: center;
     align-items: center;
-    .bandeja{
+    .bandeja {
       width: 90%;
     }
   }
-  .der{
+  .der {
     display: inherit;
     flex: 1;
     justify-content: center;
   }
 }
 
-#zihua{
-  .bandeja{
+#zihua {
+  .bandeja {
     display: flex;
     flex-wrap: wrap;
     position: relative;
@@ -117,15 +118,35 @@ a:hover,
     align-items: center;
     gap: 2.5rem;
     padding: 1rem 0;
-    .pez-zihua{
-      position: absolute;
-      top: 0%;
-      left: 50%;
-      @include cel{
-        left: 0%;
-
+    img,
+    .info {
+      flex: 1;
+    }
+    @include cel{
+      &:nth-child(2){
+        img{
+          order: 2;
+        }
       }
     }
-   
+    .pez-zihua {
+      position: absolute;
+      top: -20%;
+      left: 30%;
+      transform: translateX(-50%);
+      width: 250px;
+      @include cel {
+        left: 80%;
+        width: 150px;
+      }
+    }
+    .pez-zihua2 {
+      @extend .pez-zihua;
+      top: 70%;
+      @include cel{
+        left: 70%;
+        top: 75%;
+      }
+    }
   }
 }
