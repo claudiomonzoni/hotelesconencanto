@@ -32,3 +32,53 @@
 </li>
     </ul>
 </div>
+
+<style lang="scss">
+    @import "../estilos/_variables.scss";  
+    
+#filtro {
+  display: flex;
+  flex-wrap: wrap;
+  background: $azul;
+  padding: 2rem;
+  border-radius: $radio;
+  margin-top: 2rem;
+  h4 {
+    flex: 1 0 100%;
+    color: $naranja;
+    text-align: center;
+    font-weight: bold;
+  }
+  hr {
+    flex: 1 0 100%;
+    background: $verde;
+  }
+  ul {
+    justify-content: space-evenly;
+    flex: 1 0 100%;
+    flex-wrap: wrap;
+    gap: 2rem;
+    display: inherit;
+    li {
+      display: inherit;
+      align-items: center;
+      @include cel {
+        font-size: 0.8rem;
+        flex-wrap: wrap;
+        flex: 0 0 39%;
+        justify-content: center;
+        gap: 0.6rem;
+        text-align: center;
+      }
+    }
+  }
+  img {
+    width: 50px;
+    padding: 0.5rem;
+  }
+  a {
+    color: #fff;
+  }
+}
+
+</style>

@@ -44,3 +44,64 @@
         </div>
     </div>
 </div>
+
+
+<style lang="scss">
+@import "../estilos/_variables.scss";
+
+#ofertas {
+  .bandeja {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 30%;
+    margin-top: 2rem;
+    padding: 0 2.5rem 2rem;
+    gap: 1rem;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    &::-webkit-scrollbar {
+      width: 10px;
+      height: 15px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $azul;
+      border-radius: $radio;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    @include cel {
+      grid-auto-columns: 80%;
+      padding-right: 1.2rem;
+    }
+    .oferta {
+      scroll-snap-align: end;
+      img {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        position: relative;
+        z-index: -1;
+      }
+      color: #fff;
+
+      h3 {
+        color: $naranja;
+        font-weight: bold;
+      }
+      p {
+        padding: 1rem 0;
+      }
+      .bandeja-oferta {
+        background: $azul;
+        border-radius: $radio;
+        padding: 1.5rem;
+        margin-top: -3%;
+      }
+    }
+  }
+}
+
+</style>

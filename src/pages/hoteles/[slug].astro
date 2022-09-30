@@ -1,0 +1,19 @@
+---
+import Layout from "../../layouts/Layout.astro";
+export async function getStaticPaths() {
+const hoteles = await Astro.glob('./*.mdx')
+return hoteles.map(hotel => ({
+    params:{
+        slug: hotel.frontmatter.slug
+    },
+    props:{
+        hotel
+    }
+}))
+}
+const {Content, frontmatter} = Astro.props.hotel
+---
+
+<Layout titulo={frontmatter.titulo} descripcion={frontmatter.extracto}> 
+    hola
+</Layout>
