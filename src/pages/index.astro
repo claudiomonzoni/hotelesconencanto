@@ -4,6 +4,8 @@ import Filtro from '../components/Filtro.astro';
 import Ofertas from '../components/Ofertas.astro';
 import Card from '../components/Card.astro';
 
+const hoteles = await Astro.glob('./hoteles/*.mdx')
+
 ---
 
 <Layout titulo="Hoteles de Zihuatanejo" descripcion="Reserva hoteles baratos, comodos y bien ubicados directamente con ellos sin intermediarios">
@@ -27,106 +29,21 @@ import Card from '../components/Card.astro';
 	<Filtro></Filtro>
 
 	<div id="hoteles" class="limite">
-		<div class="hotel">
-			<img src="https://picsum.photos/1000/600/" alt="">
-			<div class="bandeja">
-					<div class="conte">
-					<h2>La Quinta de Don Andres</h2>
-				<p>Lorem ipsum dolor sit amet. </p>
-				<a href="#" class="btnVerde">ver hotel</a>
-				</div>
-			</div>
-		</div>
-		<div class="hotel">
-			<img src="https://picsum.photos/1000/600/" alt="">
-			<div class="bandeja">
-					<div class="conte">
-					<h2>La Quinta de Don Andres</h2>
-				<p>Lorem ipsum dolor sit amet. </p>
-				<a href="#" class="btnVerde">ver hotel</a>
-				</div>
-			</div>
-		</div>
-		<div class="hotel">
-			<img src="https://picsum.photos/1000/600/" alt="">
-			<div class="bandeja">
-					<div class="conte">
-					<h2>La Quinta de Don Andres</h2>
-				<p>Lorem ipsum dolor sit amet. </p>
-				<a href="#" class="btnVerde">ver hotel</a>
-				</div>
-			</div>
-		</div>
-		<div class="hotel">
-			<img src="https://picsum.photos/1000/600/" alt="">
-			<div class="bandeja">
-					<div class="conte">
-					<h2>La Quinta de Don Andres</h2>
-				<p>Lorem ipsum dolor sit amet. </p>
-				<a href="#" class="btnVerde">ver hotel</a>
-				</div>
-			</div>
-		</div>
-		<div class="hotel">
-			<img src="https://picsum.photos/1000/600/" alt="">
-			<div class="bandeja">
-					<div class="conte">
-					<h2>La Quinta de Don Andres</h2>
-				<p>Lorem ipsum dolor sit amet. </p>
-				<a href="#" class="btnVerde">ver hotel</a>
-				</div>
-			</div>
-		</div>
-		<div class="hotel">
-			<img src="https://picsum.photos/1000/600/" alt="">
-			<div class="bandeja">
-					<div class="conte">
-					<h2>La Quinta de Don Andres</h2>
-				<p>Lorem ipsum dolor sit amet. </p>
-				<a href="#" class="btnVerde">ver hotel</a>
-				</div>
-			</div>
-		</div>
-		<div class="hotel">
-			<img src="https://picsum.photos/1000/600/" alt="">
-			<div class="bandeja">
-					<div class="conte">
-					<h2>La Quinta de Don Andres</h2>
-				<p>Lorem ipsum dolor sit amet. </p>
-				<a href="#" class="btnVerde">ver hotel</a>
-				</div>
-			</div>
-		</div>
-		<div class="hotel">
-			<img src="https://picsum.photos/1000/600/" alt="">
-			<div class="bandeja">
-					<div class="conte">
-					<h2>La Quinta de Don Andres</h2>
-				<p>Lorem ipsum dolor sit amet. </p>
-				<a href="#" class="btnVerde">ver hotel</a>
-				</div>
-			</div>
-		</div>
-		<div class="hotel">
-			<img src="https://picsum.photos/1000/600/" alt="">
-			<div class="bandeja">
-					<div class="conte">
-					<h2>La Quinta de Don Andres</h2>
-				<p>Lorem ipsum dolor sit amet. </p>
-				<a href="#" class="btnVerde">ver hotel</a>
-				</div>
-			</div>
-		</div>
-		<div class="hotel">
-			<img src="https://picsum.photos/1000/600/" alt="">
-			<div class="bandeja">
-					<div class="conte">
-					<h2>La Quinta de Don Andres</h2>
-				<p>Lorem ipsum dolor sit amet. </p>
-				<a href="#" class="btnVerde">ver hotel</a>
-				</div>
-			</div>
-		</div>
+
+	{hoteles.map(hotel => (
+			<div class="hotel" data-estrellas={hotel.frontmatter.estrellas} data-aire={hotel.frontmatter.aire} data-estacionamiento={hotel.frontmatter.estacionamiento} data-cerca={hotel.frontmatter.cerca}>
+						<img src="https://picsum.photos/1000/600/" alt={hotel.frontmatter.titulo}>
+						<div class="bandeja"> 
+								<div class="conte">
+								<h2>{hotel.frontmatter.titulo}</h2>
+							<p>{hotel.frontmatter.extracto} </p>
+							<a href={`/hoteles/${hotel.frontmatter.slug}`} class="btnVerde">ver hotel</a>
+							</div>
+						</div>
+					</div>
+	))}
+		
+		
 	</div>
 
 	<div id="zihua" class="limite">
