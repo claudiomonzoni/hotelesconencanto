@@ -1,16 +1,49 @@
 ---
 const {variable, estrellas, matriz} = Astro.props
 ---
-<h1> {variable}  </h1>
-<h3>Hotel {estrellas} estrellas </h3>
-<ul class="limite">
-  <!-- <slot />  -->
-  {
-    
-  matriz.map(( lista, index ) => {
-    return <li> {lista}</li> 
-  } 
-  )
+<div id="amenidades" class="limite">
+<div class="izq">
+<div class="bandeja">
 
-  }
+  <h3> {variable}  </h3>
+  <h4>Hotel {estrellas} estrellas </h4>
+  <ul class="limite">
+    <!-- <slot />  -->
+    {
+      matriz.map(( lista, index ) => {
+        return <li> {lista}</li> 
+      } 
+      )    
+    }
   </ul>
+</div>
+</div>
+<div class="der">
+<slot />
+</div>
+</div>
+
+
+<style lang="scss">
+  @import "../estilos/_variables.scss";
+  
+#amenidades{
+  margin-top: $margen;
+  display: flex;
+  h3{
+    color: $naranja !important;
+  }
+  .izq{
+  
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .der{
+    flex: 2;
+    border-left: 1px solid $azul;
+    padding: 0 $margen;
+  }
+}
+</style>

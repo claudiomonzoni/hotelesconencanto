@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Herosec from "../../components/Herosec.astro";
+import Ofertas from "../../components/Ofertas.astro";
 export async function getStaticPaths() {
 const hoteles = await Astro.glob('./*.mdx')
 return hoteles.map(hotel => ({
@@ -18,4 +19,5 @@ const {Content, frontmatter} = Astro.props.hotel
 <Layout titulo={frontmatter.titulo} descripcion={frontmatter.extracto}> 
 <Herosec titulo={frontmatter.titulo} descripcion={frontmatter.extracto} imagen="aqui la url" />
 <Content />
+<Ofertas />
 </Layout>

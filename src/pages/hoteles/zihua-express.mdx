@@ -15,19 +15,17 @@ date: 10/4/2022
 
 ---
 import Amenidades from '../../components/Amenidades.astro'
-export const components = { blockquote: Amenidades };
 
+<Amenidades variable="Amenidades" estrellas={frontmatter.estrellas} matriz={["Estacionamiento", "Aire Acondicionado", "Alberca", "Agua Caliente", "Tv. Cable", "Internet", "Servicio al cuarto" ]} > 
 
-### Amenidades
-<Amenidades variable="desde props" estrellas={frontmatter.estrellas} matriz={["Estacionamiento", "Aire Acondicionado", "Alberca", "Agua Caliente", "Tv. Cable", "Internet", "Servicio al cuarto" ]} /> 
-
-reserva ahora 
 
 ## Cerca de todo en Zihuatanejo
 
 Nuestras 75 habitaciones le ofrecen diferentes opciones de confortable hospedaje para todos los gustos y presupuestos. Contamos con habitaciones Estándar, Business, Premium y un exclusivo Penthouse para esos viajes que merecen algo especial.
 
 Nos hemos ocupado por mantenernos a la vanguardia para su comodidad y seguridad, por lo que encontrara un balance entre tradición y funcionalidad. Con más de 35 años de operación y crecimiento estamos seguros que no importa si su viaje es de placer o negocios sabremos como atenderlo para que su estancia sea una gran experiencia.
+
+</Amenidades>
 
 galleria
 
