@@ -12,7 +12,10 @@ telefonos: 755554-5330 / 755554-5340 / 755554-2669 / 755554-3661
 whatsapp: 7551019549
 Direccion: Agustín Ramírez # 2 Col. Centro, Zihuatanejo, Guerrero. C.P.40880Dirección: Agustín Ramírez # 2 Col. Centro, Zihuatanejo, Guerrero. C.P.40880
 date: 10/4/2022
+
 ---
+import Amenidades from '../../components/Amenidades.astro'
+export const components = { blockquote: Amenidades };
 
 
 ## Amenidades
@@ -28,6 +31,8 @@ date: 10/4/2022
 - Tv. Cable
 - Internet
 - Servicio al cuarto
+
+<Amenidades variable="desde props" estrellas={frontmatter.estrellas} matriz={["Estacionamiento", "Aire Acondicionado", "Alberca", "Agua Caliente" ]} /> 
 
 reserva ahora 
 

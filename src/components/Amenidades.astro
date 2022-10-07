@@ -1,0 +1,16 @@
+---
+const {variable, estrellas, matriz} = Astro.props
+---
+<h1> {variable}  </h1>
+<h3>Hotel {estrellas} estrellas </h3>
+<ul class="limite">
+  <!-- <slot />  -->
+  {
+    
+  matriz.map(( lista, index ) => {
+    return <li> {lista}</li> 
+  } 
+  )
+
+  }
+  </ul>
