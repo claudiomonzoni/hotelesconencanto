@@ -1,0 +1,42 @@
+---
+export interface Props {
+	titulo: string;
+	descripcion: string;
+	imagen: string;
+}
+
+const { titulo, descripcion, imagen } = Astro.props;
+---
+
+<div id="hero-sec" class="limite">
+    <div class="izq">
+        <div class="bandeja">
+            <h1> {titulo} </h1>
+            <p>
+                {descripcion}
+            </p>
+        </div>
+    </div>
+    <img src="https://picsum.photos/1000/600/" alt="">
+</div>
+
+<style lang="scss">
+@import "../estilos/_variables.scss";
+#hero-sec { 
+   display: flex;
+}
+.izq { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .bandeja{
+        background: #fff;
+        padding: 3rem;
+        transform: translateX(30px);
+        border-radius: $radio;
+        box-shadow: -3px 0px 15px -6px rgba(54,54,54,0.62);
+        -webkit-box-shadow: -3px 0px 15px -6px rgba(54,54,54,0.62);
+        -moz-box-shadow: -3px 0px 15px -6px rgba(54,54,54,0.62);
+    }
+}
+</style>

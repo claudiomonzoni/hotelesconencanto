@@ -18,21 +18,8 @@ import Amenidades from '../../components/Amenidades.astro'
 export const components = { blockquote: Amenidades };
 
 
-## Amenidades
-
-### Hotel: {frontmatter.estrellas} estrellas.
-
-
-
-- Estacionamiento
-- Aire Acondicionado
-- Alberca
-- Agua Caliente
-- Tv. Cable
-- Internet
-- Servicio al cuarto
-
-<Amenidades variable="desde props" estrellas={frontmatter.estrellas} matriz={["Estacionamiento", "Aire Acondicionado", "Alberca", "Agua Caliente" ]} /> 
+### Amenidades
+<Amenidades variable="desde props" estrellas={frontmatter.estrellas} matriz={["Estacionamiento", "Aire Acondicionado", "Alberca", "Agua Caliente", "Tv. Cable", "Internet", "Servicio al cuarto" ]} /> 
 
 reserva ahora 
 
