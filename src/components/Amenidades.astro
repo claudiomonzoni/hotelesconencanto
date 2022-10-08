@@ -7,7 +7,7 @@ const {variable, estrellas, matriz} = Astro.props
 
   <h3> {variable}  </h3>
   <h4>Hotel {estrellas} estrellas </h4>
-  <ul class="limite">
+  <ul>
     <!-- <slot />  -->
     {
       matriz.map(( lista, index ) => {
@@ -16,6 +16,7 @@ const {variable, estrellas, matriz} = Astro.props
       )    
     }
   </ul>
+  <a href="#contacto" class="btn">reserva ahora</a>
 </div>
 </div>
 <div class="der">
@@ -30,8 +31,28 @@ const {variable, estrellas, matriz} = Astro.props
 #amenidades{
   margin-top: $margen;
   display: flex;
+  flex-wrap: wrap;
   h3{
     color: $naranja !important;
+  }
+  h4{
+    color: $gris;
+    font-weight: bolder;
+    border-bottom: solid 1px $gris;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+  }
+  li{
+    list-style-type: circle;
+  }
+ 
+  @include cel {
+    .izq{
+      order: 2;
+    }
+    .der{
+      border-left:none!important;
+    }
   }
   .izq{
   
@@ -42,8 +63,12 @@ const {variable, estrellas, matriz} = Astro.props
   }
   .der{
     flex: 2;
-    border-left: 1px solid $azul;
     padding: 0 $margen;
+    border-left: 1px solid $azul;
   }
+  p{
+      border: solid;
+      padding-bottom: 6rem ;
+    }
 }
 </style>

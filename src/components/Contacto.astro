@@ -1,0 +1,106 @@
+---
+export interface Props{
+    web: string;
+    tel: string;
+    whatsapp: string;
+    dir: string;
+    email: string;
+    lat: number;
+    lang: number;
+}
+const {web, tel, whatsapp, dir, lat, lang, email} = Astro.props;
+
+
+---
+
+
+<div id="contacto" class="limite">
+    
+<div id="bandeja">
+    <div class="conte">
+        <h3>Contacto</h3>
+        <ul>
+            <li>
+                <b>Sitio web:</b><a href={`http://${web}`} target="_blank"> {web}</a>
+            </li>
+            <li>
+                <b>Teléfono:</b> {tel}
+            </li>
+            <li>
+                <b>Whatsapp:</b> {whatsapp}
+            </li>
+            <li>
+                <b>Dirección:</b> {dir}
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div id="mapa">
+    aqui el mapa
+</div>
+</div>
+
+<style lang="scss">
+@import "../estilos/_variables.scss";
+
+#contacto{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: $margen;
+}
+@include cel{
+    #bandeja, #mapa{
+        flex: 1 0 100%!important;
+    }
+    #bandeja{
+        border-radius: $radio $radio 0 0!important;
+    }
+}
+#bandeja{
+    display: flex;
+    flex: 1;
+    background-color: $azul;
+    border-radius: $radio 0 0 $radio;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    padding: $margen 0;
+    .conte{
+width: 70%;
+            a{
+                color: $verde;
+            }
+            li{padding-bottom: .7rem;}
+            li:last-child{padding-bottom: 0;}
+        h3{
+            color: $naranja;
+        }
+    }
+}
+#mapa{
+    flex: 2;
+    min-height: 40vh;
+}
+
+</style>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+crossorigin=""/>
+
+<script src="/leaflet.js" is:inline></script>
+
+<script define:vars={{lat, lang }}>
+var map = L.map('mapa').setView([lat, lang], 15);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+var circle = L.circle([lat, lang], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    radius: 100
+}).addTo(map);
+</script>
