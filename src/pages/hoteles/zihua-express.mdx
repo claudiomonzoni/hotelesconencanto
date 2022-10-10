@@ -2,7 +2,7 @@
 titulo: Hotel Zihua Express
 extracto: Ambientación que le invita a la relajación y a la comodidad 
 slug: hotel-zihua-express
-imagen-principal: "/img/zihua-express/hotel-zihua-express-principal.webp"
+imagenprincipal: "/hotel/zihua-express/instalaciones_zihuaExpress_5.jpg"
 estrellas: 3
 aire: "true"
 estacionamiento: "true"
@@ -18,6 +18,7 @@ date: 10/4/2022
 
 ---
 import Amenidades from '../../components/Amenidades.astro'
+import Galeria from "../../components/Galeria.astro";
 
 <Amenidades variable="Amenidades" estrellas={frontmatter.estrellas} matriz={["Estacionamiento", "Aire Acondicionado", "Alberca", "Agua Caliente", "Tv. Cable", "Internet", "Servicio al cuarto" ]} > 
 
@@ -30,6 +31,10 @@ Nos hemos ocupado por mantenernos a la vanguardia para su comodidad y seguridad,
 
 </Amenidades>
 
-galleria
-
-![alt](https://image-url)
+<Galeria>
+- ![Esto es el alt](/mariscos-zihuatanejo-hoteles-con-encainto.webp)
+- ![Esto es el alt](/mariscos-zihuatanejo-hoteles-con-encainto.webp)
+- ![Esto es el alt](/mariscos-zihuatanejo-hoteles-con-encainto.webp)
+- ![Esto es el alt](/mariscos-zihuatanejo-hoteles-con-encainto.webp)
+- ![Esto es el alt](/mariscos-zihuatanejo-hoteles-con-encainto.webp)
+</Galeria>

@@ -1,0 +1,85 @@
+---
+export interface Props {
+    whatsapp: string;
+    }
+    const {whatsapp} = Astro.props
+---
+
+<div id="reservaciones" class="limite">
+    <img src="/pez-payaso-hoteles-con-encanto.webp" alt="Pez payaso zihuatanejo" id="pez">
+    <h3>Reservaciones</h3>
+    <form id="reserva">
+        <label for="nombre">Nombre*
+            <input type="text" id="nombre" placeholder="nombre completo">
+        </label>
+        <label for="adultos">Numero de adulto*
+            <input type="number" id="adultos" placeholder="seleccione">
+        </label>
+        <label for="adultos">Numero de niños*
+            <input type="number" id="ninos" placeholder="menores de 12 años">
+        </label>
+        <label for="llegada">Fecha de llegada*
+            <input type="date" id="llegada" placeholder="seleccione">
+        </label>
+        <label for="salida">Fecha de salida*
+            <input type="date" id="salida" placeholder="seleccione">
+        </label>
+        <button id="cotizar" class="btn">cotizar</button>
+       
+        <!-- <a href="#" id="cotizar" class="btn">cotizar</a> -->
+    </form>
+
+    <div id="revision">
+        <h4>Usted desea cotizar lo siguiente:</h4>
+    </div>
+
+</div>
+<style lang="scss">
+@import "../estilos/_variables.scss";
+
+#reservaciones{
+    background-color: #fff;
+    position: relative;
+    margin-top: $margen;
+    border-radius:$radio;
+    padding: $margen;
+    display: flex;
+    flex-wrap: wrap;
+    h3{
+        color: $naranja;
+        flex: 1 0 100%;
+    }
+    #reserva{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        flex: 2;
+        justify-content: left;
+        label{
+            flex: 1 0 40%;
+            max-width: 40%;
+        }
+        #cotizar{
+            border: none;
+            flex: 1 0 40%;
+            margin-top: 20px;
+            paddin-top: 0;
+            text-align: center;
+            max-width: 150px;
+            max-height: 50px;
+            font-weight: bold;
+            font-size: .9rem;
+        }
+    }
+    #revision{
+        flex: 1;
+        border: solid;
+    }
+    #pez{
+        position: absolute;
+        width: 150px;
+        top: -4rem;
+        left: 45%;
+    }
+}
+</style>

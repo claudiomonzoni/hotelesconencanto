@@ -47,7 +47,7 @@ const {web, tel, whatsapp, dir, lat, lang, email} = Astro.props;
 #contacto{
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: $margen;
+    margin-top: $margen;
 }
 @include cel{
     #bandeja, #mapa{
@@ -99,7 +99,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 var circle = L.circle([lat, lang], {
     color: 'red',
-    fillColor: '#f03',
+    fillColor: '#E76128',
     fillOpacity: 0.5,
     radius: 100
 }).addTo(map);

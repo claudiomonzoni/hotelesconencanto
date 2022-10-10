@@ -1,16 +1,40 @@
 ---
 titulo: Hotel Zihuatanejo Centro
-extracto: Hotel ubicado en el corazón de Zihuatanejo
-slug: hotel-zihuatanejo-centro
+extracto: Ambientación que le invita a la relajación y a la comodidad 
+slug: hotel-zihua-centro
+imagenprincipal: "/hotel/zihua-centro/Fachada-1-1024x768-1.jpg"
 estrellas: 3
 aire: "true"
 estacionamiento: "true"
 cerca: "true"
-date: 9/30/2022
+web: zihuaexpress.negocio.site
+telefonos: 755554-5330 / 755554-5340 / 755554-2669 / 755554-3661 
+whatsapp: 7551019549
+direccion: Agustín Ramírez No.2 Col. Centro, Zihuatanejo, Guerrero. C.P.40880
+email: hola@hola.com
+lat: 17.641249
+lang: -101.555034
+date: 10/4/2022
+
 ---
+import Amenidades from '../../components/Amenidades.astro'
+import Galeria from "../../components/Galeria.astro";
 
-# {frontmatter.titulo}
-## {frontmatter.date}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis elementum felis, ac lacinia massa. Proin blandit dui id massa congue sodales ac sit amet nibh. Nam enim risus, ultrices eget ipsum ac, malesuada faucibus quam. Quisque accumsan hendrerit nisi, sit amet aliquet massa aliquet id. Etiam sed lectus augue. Nullam ultricies sit amet magna ut imperdiet. Mauris faucibus ipsum est, vitae iaculis magna ultrices vulputate. Sed eleifend nec dolor tristique mattis. Cras dictum, ex egestas aliquet scelerisque, est eros eleifend felis, ac maximus elit neque eget enim. Nulla ac nibh euismod, sodales enim ut, sollicitudin mauris. Duis ut justo ac mi faucibus aliquam.
+<Amenidades variable="Amenidades" estrellas={frontmatter.estrellas} matriz={["Estacionamiento", "Aire Acondicionado", "Alberca", "Agua Caliente", "Tv. Cable", "Internet", "Servicio al cuarto" ]} > 
 
-Integer in turpis tortor. Ut vitae metus nec dolor dignissim molestie ut quis sapien. Etiam nec lacinia orci. Vivamus feugiat scelerisque quam. Nam condimentum, nunc vitae pellentesque accumsan, ex quam consectetur sem, ultricies dignissim odio erat quis erat. Vivamus sodales lectus sed lacus vulputate venenatis. Sed venenatis turpis in sem vehicula pulvinar. Nullam pellentesque sem eu nisl bibendum, eget faucibus magna mollis. Nunc posuere dignissim orci in rhoncus. Donec fermentum, est ac placerat bibendum, turpis neque accumsan nisi, vitae accumsan orci lectus aliquet quam
+
+## Cerca de todo en Zihuatanejo
+
+Nuestras 75 habitaciones le ofrecen diferentes opciones de confortable hospedaje para todos los gustos y presupuestos. Contamos con habitaciones Estándar, Business, Premium y un exclusivo Penthouse para esos viajes que merecen algo especial.
+
+Nos hemos ocupado por mantenernos a la vanguardia para su comodidad y seguridad, por lo que encontrara un balance entre tradición y funcionalidad. Con más de 35 años de operación y crecimiento estamos seguros que no importa si su viaje es de placer o negocios sabremos como atenderlo para que su estancia sea una gran experiencia.
+
+</Amenidades>
+
+<Galeria>
+- ![Esto es el alt](/mariscos-zihuatanejo-hoteles-con-encainto.webp)
+- ![Esto es el alt](/mariscos-zihuatanejo-hoteles-con-encainto.webp)
+- ![Esto es el alt](/mariscos-zihuatanejo-hoteles-con-encainto.webp)
+- ![Esto es el alt](/mariscos-zihuatanejo-hoteles-con-encainto.webp)
+- ![Esto es el alt](/mariscos-zihuatanejo-hoteles-con-encainto.webp)
+</Galeria>

@@ -126,3 +126,21 @@
 
   }
 }
+
+#gale{
+  margin-top: $margen;
+  ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  li{
+    flex: 1 0 33%;
+    max-width: 33%;
+    padding: .5rem;
+    @include cel{
+      flex: 1 0 100%;
+      max-width: 100%;
+    }
+  }
+}

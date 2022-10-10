@@ -154,3 +154,16 @@ a:hover,
     }
   }
 }
+
+label{
+  color: $naranja;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  display: block;
+}
+input{
+  border: none;
+  background: $beige;
+  padding:0.5rem .7rem;
+  width: 100%;
+}
