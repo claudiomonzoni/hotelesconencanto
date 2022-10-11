@@ -24,13 +24,15 @@ export interface Props {
         <label for="salida">Fecha de salida*
             <input type="date" id="salida" placeholder="seleccione">
         </label>
-        <button id="cotizar" class="btn">cotizar</button>
+        <!-- <button id="cotizar" class="btn">cotizar</button> -->
        
-        <!-- <a href="#" id="cotizar" class="btn">cotizar</a> -->
+        <a href="#" id="cotizar" class="btn">cotizar</a>
     </form>
 
     <div id="revision">
         <h4>Usted desea cotizar lo siguiente:</h4>
+        <li><b>Nombre:</b> Julano de tal</li>
+        <li><b>No. de adultos:</b> 7</li>
     </div>
 
 </div>
@@ -58,6 +60,10 @@ export interface Props {
         label{
             flex: 1 0 40%;
             max-width: 40%;
+            @include cel {
+                flex: 1 0 100%;
+                max-width: 100%;
+                }
         }
         #cotizar{
             border: none;
@@ -73,7 +79,19 @@ export interface Props {
     }
     #revision{
         flex: 1;
-        border: solid;
+        border-left: solid 1px $naranja;
+        padding: 2rem;
+        h4{
+            color: $azul;
+            font-weight: bold;
+            padding-bottom: 1rem;
+        }
+        b{
+            color: $naranja;
+        }
+        li{
+            list-style: circle;
+        }
     }
     #pez{
         position: absolute;
@@ -83,3 +101,88 @@ export interface Props {
     }
 }
 </style>
+
+<script>
+    import moment from "moment";
+if(!window.location.pathname === "/"){
+  import ("moment/locale/es")
+  .then((lang)=>{
+    return lang
+  })
+}
+const revisar = document.getElementById("revision");
+//inputs
+const nombre = document.getElementById("nombre");
+const llegada = document.getElementById("llegada");
+const salida = document.getElementById("salida");
+const adultos = document.getElementById("adultos");
+const ninos = document.getElementById("ninos");
+const btncotizar = document.getElementById("cotizar");
+
+
+//user agent
+const ua = navigator.userAgent;
+
+//obtengo los datos de los inputs
+
+//si es cel app si es pc web.app
+const actualizar = (e) => {
+    e.preventDefault();
+    
+    if (
+        nombre.value === "" ||
+        llegada.value === "" ||
+        salida.value === "" ||
+        adultos.value === "" ||
+        ninos.value === ""
+        ) {
+            console.log("vacio");
+        } else {
+            btncotizar.classList.remove("desactivado");
+        }
+        
+        //comprobar si es cel o pc
+        let whats = "";
+        if (/Mobile/i.test(ua)) {
+            whats = "https://api.whatsapp.com/send/?phone=5217551397152&text=";
+        } else {
+            whats = "https://web.whatsapp.com/send/?phone=5217551397152&text=";
+        }
+        //obtener las noches
+        moment.locale("es");
+        const llegadaM = moment(llegada.value).format("dddd D MMMM YYYY");
+        const salidaM = moment(salida.value).format("dddd D MMMM YYYY");
+        
+        const mensaje = `
+        <hr>
+        <h3> Por favor revise los datos para su cotización por whatsapp</h3>
+        <hr>
+        Name / Nombre: <b> ${nombre.value} </b> <br>
+        Numero de adultos: <b> ${adultos.value}</b> </br>
+        Numero de niños: <b> ${ninos.value}</b>
+        Fecha de llegada: <b> ${llegadaM} </b> <br>
+        Fecha de Salida: <b> ${salidaM} </b> <br>
+`;
+
+revisar.innerHTML = mensaje;
+envio(whats, llegadaM, salidaM);
+};
+
+// fin actualizar
+
+const envio = (whats, llegadaM, salidaM) => {
+    const url = `
+    ${whats}Hola,%20me%20contacto%20desde%20zihuacentro.com,%20deseo%20cotizar:%0aNombre:%20${nombre.value},%0aNo.%20de%20adultos:%20${adultos.value},%0aNo.%20de%20niños:%20${ninos.value}%0aFecha%20de%20Llagada:%20${llegadaM}%0aFecha%20de%20Salida:%20${salidaM}
+    %0aComentarios:%20
+    `;
+    btncotizar.href = url;
+};
+
+
+nombre.addEventListener("focusout", actualizar);
+llegada.addEventListener("focusout", actualizar);
+salida.addEventListener("focusout", actualizar);
+adultos.addEventListener("focusout", actualizar);
+ninos.addEventListener("focusout", actualizar);
+
+</script>

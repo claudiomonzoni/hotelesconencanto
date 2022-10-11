@@ -9,7 +9,9 @@ html {
   color: $gris;
   font-family: Montserrat;
   background: rgb(242, 238, 227);
-  background: linear-gradient(180deg, $beige 0%, #ffffff 30%) no-repeat;
+  background: linear-gradient(180deg, $beige 0%, #ffffff 30%, #fff 50%, $beige 100%) no-repeat;
+  scroll-behavior: smooth;
+
 }
 
 *,
@@ -64,6 +66,8 @@ img {
 }
 a {
   text-decoration: none;
+  color: $azul;
+  font-weight: bold;
 }
 p{
   padding-bottom: 1.5rem;

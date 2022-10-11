@@ -27,6 +27,9 @@ const { titulo, descripcion, imagen } = Astro.props;
   #hero-sec {
     display: flex;
     flex-wrap: wrap;
+    @include cel {
+      margin-top: $margen;
+      }
   }
   .izq {
     display: flex;
