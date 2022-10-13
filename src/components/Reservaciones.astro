@@ -26,13 +26,14 @@ export interface Props {
         </label>
         <!-- <button id="cotizar" class="btn">cotizar</button> -->
        
-        <a href="#" id="cotizar" class="btn">cotizar</a>
+        <a href="#" id="cotizar" class="btn desactivado">cotizar</a>
     </form>
 
     <div id="revision">
-        <h4>Usted desea cotizar lo siguiente:</h4>
-        <li><b>Nombre:</b> Julano de tal</li>
-        <li><b>No. de adultos:</b> 7</li>
+        <div class="bandeja">
+            <h4>Usted desea cotizar lo siguiente:</h4>
+        </div>
+       
     </div>
 
 </div>
@@ -78,6 +79,9 @@ export interface Props {
         }
     }
     #revision{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         flex: 1;
         border-left: solid 1px $naranja;
         padding: 2rem;
@@ -85,6 +89,7 @@ export interface Props {
             color: $azul;
             font-weight: bold;
             padding-bottom: 1rem;
+            border-bottom: solid 1px $naranja;
         }
         b{
             color: $naranja;
@@ -101,16 +106,14 @@ export interface Props {
     }
 }
 </style>
+<script src="/moment-with-locales.min.js" is:inline></script>
 
-<script>
-    import moment from "moment";
-if(!window.location.pathname === "/"){
-  import ("moment/locale/es")
-  .then((lang)=>{
-    return lang
-  })
-}
-const revisar = document.getElementById("revision");
+<script define:vars={{whatsapp}}>
+    // import moment from 'moment-with-locales-es6';
+    moment.locale('es')
+
+
+const revisar = document.querySelector("#revision .bandeja");
 //inputs
 const nombre = document.getElementById("nombre");
 const llegada = document.getElementById("llegada");
@@ -144,9 +147,9 @@ const actualizar = (e) => {
         //comprobar si es cel o pc
         let whats = "";
         if (/Mobile/i.test(ua)) {
-            whats = "https://api.whatsapp.com/send/?phone=5217551397152&text=";
+            whats = `https://api.whatsapp.com/send/?phone=${whatsapp}&text=`;
         } else {
-            whats = "https://web.whatsapp.com/send/?phone=5217551397152&text=";
+            whats = `https://web.whatsapp.com/send/?phone=${whatsapp}&text=`;
         }
         //obtener las noches
         moment.locale("es");
@@ -159,9 +162,9 @@ const actualizar = (e) => {
         <hr>
         Name / Nombre: <b> ${nombre.value} </b> <br>
         Numero de adultos: <b> ${adultos.value}</b> </br>
-        Numero de niños: <b> ${ninos.value}</b>
+        Numero de niños: <b> ${ninos.value}</b><br>
         Fecha de llegada: <b> ${llegadaM} </b> <br>
-        Fecha de Salida: <b> ${salidaM} </b> <br>
+        Fecha de Salida: <b> ${salidaM} </b> 
 `;
 
 revisar.innerHTML = mensaje;

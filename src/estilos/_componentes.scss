@@ -143,4 +143,46 @@
       max-width: 100%;
     }
   }
+
+  // ul{
+  //   display: grid;
+  //   grid-auto-rows: 200px;
+  //   gap: 1rem;
+  //   grid-auto-flow: row dense;
+  //   grid-template-columns: repeat(6, 1fr);
+  //   @include cel{
+  //     grid-template-columns: repeat(2, 1fr);
+  //   }
+  //   @include tableta{
+  //     grid-template-columns: repeat(3, 1fr);
+  //   }
+  // }
+  // li:nth-child(11n+1){
+  //   grid-column: span 2;
+  // }
+  // li:nth-child(11n+3){
+  //   grid-column: span 2;
+  //   grid-row: span 1;
+  // }
+  // li:nth-child(11n+6){
+  //   grid-column: span 2;
+  //   grid-row: span 2;
+  //   border: solid;
+  // }
+  // li:nth-child(11n+7){
+  //   grid-column: span 1;
+  // grid-row: span 2;
+  // }
+  // li:nth-child(11n+8){
+  //   grid-column: span 2;
+  //   grid-row: span 2;
+  // }
+  // li:nth-child(11n+9){
+  //   grid-row: span 3;
+  // }
+  // img{
+  //   width: 100%;
+  // height: 100%;
+  // object-fit: cover;
+  // }
 }
