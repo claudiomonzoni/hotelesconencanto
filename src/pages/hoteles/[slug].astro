@@ -22,6 +22,7 @@ const {Content, frontmatter} = Astro.props.hotel
 <Content />
 
 <Contacto web={frontmatter.web} tel={frontmatter.telefonos} whatsapp={frontmatter.whatsapp} dir={frontmatter.direccion} email={frontmatter.email} lat={frontmatter.lat} lang={frontmatter.lang} />
-<Reservaciones whatsapp={frontmatter.whatsapp} />
+{ frontmatter.whatsapp === "false" ? "" : <Reservaciones whatsapp={frontmatter.whatsapp} /> }
+
 
 </Layout>
