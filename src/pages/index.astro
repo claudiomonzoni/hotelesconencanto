@@ -31,7 +31,7 @@ const hoteles = await Astro.glob('./hoteles/*.mdx')
 	<div id="hoteles" class="limite">
 
 	{hoteles.map(hotel => (
-			<div class="hotel" data-estrellas={hotel.frontmatter.estrellas} data-aire={hotel.frontmatter.aire} data-estacionamiento={hotel.frontmatter.estacionamiento} data-cerca={hotel.frontmatter.cerca}>
+			<div class="hotel" data-playa={hotel.frontmatter.enlaplaya} data-aire={hotel.frontmatter.aire} data-estacionamiento={hotel.frontmatter.estacionamiento} data-cerca={hotel.frontmatter.cerca}>
 						<img src={hotel.frontmatter.imagenprincipal} alt={hotel.frontmatter.titulo}>
 						<div class="bandeja"> 
 								<div class="conte">
