@@ -1,0 +1,28 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Herosec from "../../components/Herosec.astro";
+import Contacto from "../../components/Contacto.astro";
+import Reservaciones from "../../components/Reservaciones.astro";
+export async function getStaticPaths() {
+const ofertas = await Astro.glob('./*.mdx')
+return ofertas.map(oferta => ({
+    params:{
+        slug: oferta.frontmatter.slug
+    },
+    props:{
+        oferta
+    }
+}))
+}
+const {Content, frontmatter} = Astro.props.oferta
+---
+
+<Layout titulo={frontmatter.titulo} descripcion={frontmatter.extracto}> 
+<Herosec titulo={frontmatter.titulo} descripcion={frontmatter.extracto} imagen={frontmatter.imagenprincipal} />
+<Content />
+
+<Contacto web={frontmatter.web} tel={frontmatter.telefonos} whatsapp={frontmatter.whatsapp} dir={frontmatter.direccion} email={frontmatter.email} lat={frontmatter.lat} lang={frontmatter.lang} />
+{ frontmatter.whatsapp === "false" ? "" : <Reservaciones whatsapp={frontmatter.whatsapp} /> }
+
+
+</Layout>

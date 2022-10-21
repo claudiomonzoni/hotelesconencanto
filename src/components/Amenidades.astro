@@ -6,7 +6,8 @@ const {variable, estrellas, matriz} = Astro.props
 <div class="bandeja">
 
   <h3> {variable}  </h3>
-  <h4>Hotel {estrellas} estrellas </h4>
+  {estrellas ? <h4>Hotel {estrellas} estrellas </h4> : ""}
+ 
   <ul>
     <!-- <slot />  -->
     {
@@ -16,7 +17,8 @@ const {variable, estrellas, matriz} = Astro.props
       )    
     }
   </ul>
-  <a href="#reservaciones" class="btn">reserva ahora</a>
+  {estrellas ? <a href="#reservaciones" class="btn">reserva ahora</a> : ""}
+  
 </div>
 </div>
 <div class="der">
