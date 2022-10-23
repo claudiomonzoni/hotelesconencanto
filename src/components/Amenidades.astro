@@ -1,5 +1,5 @@
 ---
-const {variable, estrellas, matriz} = Astro.props
+const {variable, estrellas, matriz, whatsapp} = Astro.props
 ---
 <div id="amenidades" class="limite">
 <div class="izq">
@@ -17,7 +17,7 @@ const {variable, estrellas, matriz} = Astro.props
       )    
     }
   </ul>
-  {estrellas ? <a href="#reservaciones" class="btn">reserva ahora</a> : ""}
+  {whatsapp ==="false" ? <a href="#contacto" class="btn">reserva ahora</a> : <a href="#reservaciones" class="btn">reserva ahora</a>}
   
 </div>
 </div>
