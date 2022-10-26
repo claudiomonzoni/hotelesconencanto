@@ -1,6 +1,8 @@
 ---
-
+const hotelesArray = await Astro.glob('../pages/hoteles/*.mdx')
 ---
+
+
 
 <div id="filtro" class="limite">
     <h4>Ordenar hoteles por:</h4>
@@ -8,25 +10,25 @@
     <ul>
 <li>
     <img src="/swimming.png">
-    <a href="#">
+    <a href="#" id="playa">
         en la playa
     </a>
 </li>
 <li>
     <img src="/sandals.png">
-    <a href="#">
+    <a href="#" id="cerca">
         cerca de la playa
     </a>
 </li>
 <li>
     <img src="/car.png">
-    <a href="#">
+    <a href="#" id="estacionamiento">
         con estacionamiento
     </a>
 </li>
 <li>
     <img src="/air-conditioning.png">
-    <a href="#">
+    <a href="#" id="aire">
         aire acondicionado
     </a>
 </li>
@@ -82,3 +84,65 @@
 }
 
 </style>
+
+<script define:vars={{hotelesArray}}>
+
+window.onload = function(){
+  const hoteles = document.querySelector("#hoteles")
+}
+  
+  const playa = document.querySelector("#playa")
+  const cerca = document.querySelector("#cerca")
+    const estacionamiento = document.querySelector("#estacionamiento")
+    const aire = document.querySelector("#aire")
+    
+    
+    const filtro = (e) => {
+      e.preventDefault()
+      const id = e.target.getAttribute("id")
+      const hotelfiltrado = []
+      // obtengo un array de los hoteles
+      switch(id){
+
+        case "playa":
+        const conplaya = hotelesArray.filter(hotel => hotel.frontmatter.enlaplaya === "true")
+        hotelfiltrado.push(conplaya)
+        break;
+
+        case "cerca":
+        const cerca = hotelesArray.filter(hotel => hotel.frontmatter.cerca === "true")
+        hotelfiltrado.push(cerca)
+        break;
+
+        case "estacionamiento":
+        const estacionamiento = hotelesArray.filter(hotel => hotel.frontmatter.estacionamiento === "true")
+        hotelfiltrado.push(estacionamiento)
+        break;  
+
+        case "aire":
+        const aire = hotelesArray.filter(hotel => hotel.frontmatter.aire === "true")
+        hotelfiltrado.push(aire)
+        break;
+
+        default:
+        console.log("todos")
+      }
+      // borro los hoteles
+
+      const hotelesfiltrados = hotelfiltrado[0].map(function(hotel){
+        return hotel.frontmatter.titulo
+      } )
+    
+      console.log(hotelesfiltrados)
+
+       hoteles.innerHTML = hotelesfiltrados
+      // filtro con map o alguna funcion de arrays
+      // renderizo los hoteles filtrados
+    }
+    
+    playa.addEventListener("click", filtro )
+    cerca.addEventListener("click", filtro )
+    estacionamiento.addEventListener("click", filtro )
+    aire.addEventListener("click", filtro )
+  
+  </script>
