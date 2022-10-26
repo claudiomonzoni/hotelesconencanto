@@ -130,7 +130,18 @@ window.onload = function(){
       // borro los hoteles
 
       const hotelesfiltrados = hotelfiltrado[0].map(function(hotel){
-        return hotel.frontmatter.titulo
+        return `
+        <div class="hotel">
+						<img src=${hotel.frontmatter.imagenprincipal} alt=${hotel.frontmatter.titulo}>
+						<div class="bandeja"> 
+								<div class="conte">
+								<h2>${hotel.frontmatter.titulo}</h2>
+							<p>{hotel.frontmatter.extracto} </p>
+							<a href=/hoteles/${hotel.frontmatter.slug} class="btnVerde">ver hotel</a>
+							</div>
+						</div>
+					</div>
+        `
       } )
     
       console.log(hotelesfiltrados)
