@@ -15,7 +15,7 @@ const ofertas = await Astro.glob('../pages/ofertas/*.mdx')
     {ofertas.map(oferta => (
 
      <div class="oferta">
-         <img src={oferta.frontmatter.imagenprincipal} alt="{oferta.frontmatter.titulo}">
+         <img src={oferta.frontmatter.imagenprincipal} alt={oferta.frontmatter.titulo}>
          <div class="bandeja-oferta">
              <h3>{oferta.frontmatter.titulo}</h3>
              <p>{oferta.frontmatter.extracto} </p>

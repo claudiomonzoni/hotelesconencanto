@@ -19,7 +19,10 @@ html {
 *:after {
   box-sizing: inherit;
 }
-
+body{
+  position: relative;
+ z-index: -3;
+}
 body,
 h1,
 h2,
@@ -118,6 +121,7 @@ a:hover,
 }
 
 #zihua {
+  padding: 5rem 0;
   .bandeja {
     display: flex;
     flex-wrap: wrap;
