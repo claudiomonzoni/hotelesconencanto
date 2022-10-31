@@ -4,6 +4,7 @@ import Filtro from '../components/Filtro.astro';
 import Ofertas from '../components/Ofertas.astro';
 import Card from '../components/Card.astro';
 
+
 const hoteles = await Astro.glob('./hoteles/*.mdx')
 
 ---
@@ -76,3 +77,21 @@ const hoteles = await Astro.glob('./hoteles/*.mdx')
 	</div>
 	<Ofertas />
 </Layout>
+
+
+<script>
+	import gsap from "gsap"
+    let tl = gsap.timeline({repeat:0})
+  tl.from(".hero .izq ",
+  {
+    y:200,
+    opacity: 0,
+    duration: 1.5 //1 segundo
+  })
+  tl.from (".hero .der",{
+    y:100,
+    opacity: 0,
+    duration: 1.5
+  }, "-=.5")
+  
+  </script>

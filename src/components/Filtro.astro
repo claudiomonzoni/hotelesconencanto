@@ -81,6 +81,9 @@ const hotelesArray = await Astro.glob('../pages/hoteles/*.mdx')
   a {
     color: #fff;
   }
+  .nara{
+    color: $naranja;
+  }
 }
 
 </style>
@@ -95,8 +98,14 @@ window.onload = function(){
   const cerca = document.querySelector("#cerca")
     const estacionamiento = document.querySelector("#estacionamiento")
     const aire = document.querySelector("#aire")
+    const ligas = document.querySelectorAll("#filtro ul li a")
     
-    
+    const removerNara = (id) =>{
+        console.log(id)
+        // e.target.classList.remove('nara')
+        ligas.forEach(liga => liga === liga.getAttribute("id") ? "" : liga.classList.remove("nara") );
+      }
+
     const filtro = (e) => {
       e.preventDefault()
       const id = e.target.getAttribute("id")
@@ -107,26 +116,35 @@ window.onload = function(){
         case "playa":
         const conplaya = hotelesArray.filter(hotel => hotel.frontmatter.enlaplaya === "true")
         hotelfiltrado.push(conplaya)
+        removerNara(id)
+        e.target.classList.add('nara')
         break;
-
+        
         case "cerca":
-        const cerca = hotelesArray.filter(hotel => hotel.frontmatter.cerca === "true")
-        hotelfiltrado.push(cerca)
-        break;
-
-        case "estacionamiento":
-        const estacionamiento = hotelesArray.filter(hotel => hotel.frontmatter.estacionamiento === "true")
-        hotelfiltrado.push(estacionamiento)
-        break;  
-
-        case "aire":
-        const aire = hotelesArray.filter(hotel => hotel.frontmatter.aire === "true")
-        hotelfiltrado.push(aire)
+          const cerca = hotelesArray.filter(hotel => hotel.frontmatter.cerca === "true")
+          hotelfiltrado.push(cerca)
+          removerNara(id)
+          e.target.classList.add('nara')
+          break;
+          
+          case "estacionamiento":
+            const estacionamiento = hotelesArray.filter(hotel => hotel.frontmatter.estacionamiento === "true")
+            hotelfiltrado.push(estacionamiento)
+            removerNara(id)
+            e.target.classList.add('nara')
+            break;  
+            
+            case "aire":
+              const aire = hotelesArray.filter(hotel => hotel.frontmatter.aire === "true")
+              hotelfiltrado.push(aire)
+              removerNara(id)
+              e.target.classList.add('nara')
         break;
 
         default:
-        console.log("todos")
+       
       }
+    
       // borro los hoteles
 
       const hotelesfiltrados = hotelfiltrado[0].map(function(hotel){
@@ -143,8 +161,7 @@ window.onload = function(){
 					</div>
         `
       } )
-    
-      console.log(hotelesfiltrados)
+
 
        hoteles.innerHTML = hotelesfiltrados
       // filtro con map o alguna funcion de arrays

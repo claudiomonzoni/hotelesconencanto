@@ -1,5 +1,4 @@
 ---
-// por ahora cale
 ---
 
 <nav class="navbar limite">
@@ -14,3 +13,21 @@
         <li><a href="/#ofertas">Ofertas</a></li>
     </ul>
 </nav>
+
+<script>
+    import gsap from "gsap"
+    let tl = gsap.timeline({repeat:0})
+  tl.from(".logo",
+  {
+    x:200,
+    opacity: 0,
+    duration: 1 //1 segundo
+  })
+  tl.from (".navbar ul li",{
+    stagger:0.1,
+    y:100,
+    opacity: 0,
+    duration: 1 
+  }, "-=.5")
+  
+  </script>
