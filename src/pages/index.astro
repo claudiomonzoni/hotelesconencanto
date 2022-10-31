@@ -82,13 +82,13 @@ const hoteles = await Astro.glob('./hoteles/*.mdx')
 <script>
 	import gsap from "gsap"
     let tl = gsap.timeline({repeat:0})
-  tl.from(".hero .izq ",
+  tl.from(" .izq ,bandeja ",
   {
     y:200,
     opacity: 0,
     duration: 1.5 //1 segundo
   })
-  tl.from (".hero .der",{
+  tl.from (".der img",{
     y:100,
     opacity: 0,
     duration: 1.5
