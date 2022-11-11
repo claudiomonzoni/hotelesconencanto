@@ -1,0 +1,10 @@
+{
+    "site": {
+      "title": "My awesome website!",
+      "description": "Here is the description of my awesome website!"
+    },
+    "home": {
+      "encabezado": "Zihuatanejo hotels",
+      "subtitulo": "<b>Book hotels</b> that are accessible, comfortable and well located <b>directly and without intermediaries.</b>"
+    }
+  }

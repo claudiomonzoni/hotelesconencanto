@@ -1,24 +1,24 @@
 ---
 import { changeLanguage } from "i18next";
-import Layout from "../../layouts/Layout.astro";
-import Herosec from "../../components/Herosec.astro";
-import Contacto from "../../components/Contacto.astro";
-import Reservaciones from "../../components/Reservaciones.astro";
+import Layout from "../../../layouts/Layout.astro";
+import Herosec from "../../../components/Herosec.astro";
+import Contacto from "../../../components/Contacto.astro";
+import Reservaciones from "../../../components/Reservaciones.astro";
 
-changeLanguage("es");
+changeLanguage("fr");
 
 export async function getStaticPaths() {
-    const ofertas = await Astro.glob("./*.mdx");
-    return ofertas.map(oferta => ({
+    const hoteles = await Astro.glob("./*.mdx");
+    return hoteles.map(hotel => ({
         params: {
-            slug: oferta.frontmatter.slug
+            slug: hotel.frontmatter.slug
         },
         props: {
-            oferta
+            hotel
         }
     }));
 }
-const { Content, frontmatter } = Astro.props.oferta;
+const { Content, frontmatter } = Astro.props.hotel;
 ---
 
 <Layout titulo={frontmatter.titulo} descripcion={frontmatter.extracto}> 
