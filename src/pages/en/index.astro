@@ -19,11 +19,11 @@ const hoteles = await Astro.glob("./hoteles/*.mdx");
 				<div class="bandeja">
 					<h1>{t("home.encabezado")}</h1>
 					
+					<p>
 					<Trans i18nKey="home.subtitulo">
-						<p>
 							<b>Reserva hoteles</b> accesibles, comodos y bien ubicados <b>directamente y sin intermediarios.</b>
-						</p>
-					</Trans>
+						</Trans>
+					</p>
 					<a href="#hoteles" class="btn">Ver hoteles</a>
 				</div>
 			</div>
@@ -43,7 +43,7 @@ const hoteles = await Astro.glob("./hoteles/*.mdx");
 								<div class="conte">
 								<h2>{hotel.frontmatter.titulo}</h2>
 							<p>{hotel.frontmatter.extracto} </p>
-							<a href={`/hoteles/${hotel.frontmatter.slug}`} class="btnVerde">ver hotel</a>
+							<a href={`${i18next.language}/hoteles/${hotel.frontmatter.slug}`} class="btnVerde">ver hotel</a>
 							</div>
 						</div>
 					</div>

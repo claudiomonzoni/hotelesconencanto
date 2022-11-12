@@ -4,7 +4,7 @@ import Filtro from "../components/Filtro.astro";
 import Ofertas from "../components/Ofertas.astro";
 import Card from "../components/Card.astro";
 import i18next, { t, changeLanguage } from "i18next";
-import { Trans, HeadHrefLangs } from "astro-i18next/components";
+import { Trans, HeadHrefLangs, LanguageSelector } from "astro-i18next/components";
 
 changeLanguage("es");
 
@@ -17,13 +17,13 @@ const hoteles = await Astro.glob("./hoteles/*.mdx");
 
 			<div class="izq">
 				<div class="bandeja">
-					<h1>{t("home.encabezado")}</h1>
-					
-					<Trans i18nKey="home.subtitulo">
+					<LanguageSelector showFlag={true} class="languages" />
+					<h1>Hoteles en Zihuatanejo</h1>
+		
 						<p>
 							<b>Reserva hoteles</b> accesibles, comodos y bien ubicados <b>directamente y sin intermediarios.</b>
 						</p>
-					</Trans>
+					
 					<a href="#hoteles" class="btn">Ver hoteles</a>
 				</div>
 			</div>
@@ -43,7 +43,7 @@ const hoteles = await Astro.glob("./hoteles/*.mdx");
 								<div class="conte">
 								<h2>{hotel.frontmatter.titulo}</h2>
 							<p>{hotel.frontmatter.extracto} </p>
-							<a href={`/hoteles/${hotel.frontmatter.slug}`} class="btnVerde">ver hotel</a>
+							<a href={`hoteles/${hotel.frontmatter.slug}`} class="btnVerde">ver hotel</a>
 							</div>
 						</div>
 					</div>
