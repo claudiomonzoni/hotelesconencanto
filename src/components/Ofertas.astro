@@ -1,13 +1,17 @@
 ---
 const ofertas = await Astro.glob('../pages/ofertas/*.mdx')
+import { t } from "i18next";
+import { Trans } from "astro-i18next/components";
 
 ---
 
 <div id="ofertas">
     <div class="limite">
-        <h2>Ofertas de hoteles en Zihuatanejo</h2>
+        <h2>{t("ofertas.encabezado")}</h2>
         <p>
+          <Trans i18nKey="ofertas.parrafo">
             Conoce las <b>ofertas de los hoteles de Zihuatanejo</b> que cada temporada podrás aprovechar para gozar de la playa en tus vacaciones.
+          </Trans>
         </p>
     </div>
     <div class="bandeja">

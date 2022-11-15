@@ -1,35 +1,36 @@
 ---
 const hotelesArray = await Astro.glob('../pages/hoteles/*.mdx')
+import i18next, { t } from "i18next";
 ---
 
 
 
 <div id="filtro" class="limite">
-    <h4>Ordenar hoteles por:</h4>
+    <h4>{t("filtro.ordenar")} </h4>
     <hr>
     <ul>
 <li>
     <img src="/swimming.png">
     <a href="#" id="playa">
-        en la playa
+      {t("filtro.playa")}
     </a>
 </li>
 <li>
     <img src="/sandals.png">
     <a href="#" id="cerca">
-        cerca de la playa
+      {t("filtro.cerca")}
     </a>
 </li>
 <li>
     <img src="/car.png">
     <a href="#" id="estacionamiento">
-        con estacionamiento
+      {t("filtro.estacionamiento")}
     </a>
 </li>
 <li>
     <img src="/air-conditioning.png">
     <a href="#" id="aire">
-        aire acondicionado
+      {t("filtro.aire")}
     </a>
 </li>
     </ul>

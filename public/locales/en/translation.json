@@ -5,6 +5,30 @@
     },
     "home": {
       "encabezado": "Zihuatanejo hotels",
-      "subtitulo": "<b>Book hotels</b> that are accessible, comfortable and well located <b>directly and without intermediaries.</b>"
+      "subtitulo": "<b>Book hotels</b> that are accessible, comfortable and well located <b>directly and without intermediaries.</b>",
+      "liga":"check hotels",
+      "liga-descripcion":"see hotel"
+    }, 
+    "filtro":{
+      "ordenar": "filter hotels by",
+      "playa":"infront of the beach",
+      "cerca" : "near the beach",
+      "estacionamiento":"parking lot",
+      "aire" : "air conditioner"
+    },
+    "menu":{
+      "hoteles":"hotels",
+      "ofertas":"deals"
+    },
+    "zihuayork": {
+      "zihua":"Small city located in front of the Pacific Ocean <b> just 4 hours from Morelia or 1 hour from Mexico City by plane.</b>", 
+      "playa":"Beaches and a delightful cuisine",
+      "playastexto": "<p><b>Ixtapa Zihuatanejo has beautiful beaches</b> ideal for swimming or resting, some less or more touristy beaches but with several options to taste fresh seafood and local cuisine.</p>",
+      "pueblo": "The beauty of a fishing village.",
+      "textopueblo":"<p>Zihuatanejo preserves in its streets the tranquility and architecture of a small fishing village despite having <b>all the services that a tourist needs</b>.</p>"
+    },
+    "ofertas":{
+      "encabezado":"Hotels deals in Zihuatanejo",
+      "parrafo": "Get to know the <b>deals of Zihuatanejo hotels</b> that you can take advantage of each season to enjoy the beach on your vacation."
     }
   }
