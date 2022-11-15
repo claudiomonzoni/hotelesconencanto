@@ -5,6 +5,7 @@ import Ofertas from "../../components/Ofertas.astro";
 import Card from "../../components/Card.astro";
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans, HeadHrefLangs, LanguageSelector } from "astro-i18next/components";
+import { localizeUrl } from "astro-i18next";
 
 
 changeLanguage("en");
@@ -45,7 +46,7 @@ const hoteles = await Astro.glob("./hoteles/*.mdx");
 								<div class="conte">
 								<h2>{hotel.frontmatter.titulo}</h2>
 							<p>{hotel.frontmatter.extracto} </p>
-							<a href={`${i18next.language}/hoteles/${hotel.frontmatter.slug}`} class="btnVerde">{t("home.liga-descripcion")}</a>
+							<a href={localizeUrl(`${Astro.url}hoteles/${hotel.frontmatter.slug}`)} class="btnVerde">{t("home.liga-descripcion")}</a>
 							</div>
 						</div>
 					</div>

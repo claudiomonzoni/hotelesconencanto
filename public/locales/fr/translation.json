@@ -1,10 +1,34 @@
 {
-    "site": {
-      "title": "My awesome website!",
-      "description": "Here is the description of my awesome website!"
-    },
-    "home": {
-      "encabezado": "Hôtels à Zihuatanejo",
-      "subtitulo": "<0>Réservez des hôtels</0> accessibles, confortables et bien situés <1>en direct et sans intermédiaires.</1>"
-    }
+  "site": {
+    "title": "Mon site génial !",
+    "description": "Voici la description de mon super site !"
+  },
+  "home": {
+    "encabezado": "hôtels Zihuatanejo",
+    "subtitulo": "<b>Réservez des hôtels</b> accessibles, confortables et bien situés <b>en direct et sans intermédiaires.</b>",
+    "liga":"vérifier les hôtels",
+    "liga-descripcion":"voir hôtel"
+  },
+  "filtro":{
+    "ordenar": "filtrer les hôtels par",
+    "playa":"en face de la plage",
+    "cerca" : "près de la plage",
+    "estacionamiento":"parking",
+    "aire" : "climatiseur"
+  },
+  "menu":{
+    "hoteles":"hôtels",
+    "ofertas":"offres"
+  },
+  "zihuayork": {
+    "zihua":"Petite ville située face à l'océan Pacifique <b>à seulement 4h de Morelia ou 1h de Mexico en avion.</b>",
+    "playa":"Des plages et une délicieuse cuisine",
+    "playastexto": "<p><b>Ixtapa Zihuatanejo a de belles plages</b> idéales pour nager ou se reposer, certaines plages moins ou plus touristiques mais avec plusieurs options pour déguster des fruits de mer frais et une cuisine locale.</p>",
+    "pueblo": "La beauté d'un village de pêcheurs.",
+    "textopueblo":"<p>Zihuatanejo préserve dans ses rues la tranquillité et l'architecture d'un petit village de pêcheurs malgré <b>tous les services dont un touriste a besoin</b>.</p>"
+  },
+  "oertas":{
+    "encabezado":"Offres d'hôtels à Zihuatanejo",
+    "parrafo": "Découvrez les <b>offres d'hôtels à Zihuatanejo</b> dont vous pouvez profiter à chaque saison pour profiter de la plage pendant vos vacances."
   }
+}
