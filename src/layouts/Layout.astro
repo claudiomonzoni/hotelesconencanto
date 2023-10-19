@@ -1,24 +1,22 @@
 ---
-export interface Props {
-	titulo: string;
-	descripcion: string;
-}
+
 
 const { titulo, descripcion } = Astro.props;
 import "../estilos/style.scss"
 import Nav from "../components/Nav.astro"
 import Footer from "../components/Footer.astro"
+import i18next, {t} from "i18next"
 ---
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang={i18next.language}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image" href="/favicon.png" />
 		<link rel="canonical" href={Astro.url} />	
-		<meta name="description" content={descripcion}>
-		<title>{titulo}</title>
+		<meta name="description" content={t("site.description")}>
+		<title>{t("site.title")}</title>
 	</head>
 	<body>
     <Nav></Nav>

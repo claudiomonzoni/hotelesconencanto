@@ -2,29 +2,31 @@
 import Layout from "../layouts/Layout.astro";
 import Filtro from "../components/Filtro.astro";
 import Ofertas from "../components/Ofertas.astro";
-import Card from "../components/Card.astro";
-import i18next, { t, changeLanguage } from "i18next";
-import { Trans, HeadHrefLangs, LanguageSelector } from "astro-i18next/components";
+// import Card from "../../components/Card.astro";
+import { t, changeLanguage } from "i18next";
+import { Trans, LanguageSelector } from "astro-i18next/components";
+import { localizeUrl } from "astro-i18next";
 
 changeLanguage("es");
 
 const hoteles = await Astro.glob("./hoteles/*.mdx");
 ---
 
-<Layout titulo="Hoteles de Zihuatanejo" descripcion="Reserva hoteles baratos, comodos y bien ubicados directamente con ellos sin intermediarios">
+<Layout>
 	<section id="hero">
 		<div class="hero limite">
 
 			<div class="izq">
 				<div class="bandeja">
 					<LanguageSelector showFlag={true} class="languages" />
-					<h1>Hoteles en Zihuatanejo</h1>
-		
-						<p>
-							<b>Reserva hoteles</b> accesibles, comodos y bien ubicados <b>directamente y sin intermediarios.</b>
-						</p>
+					<h1>{t("home.encabezado")}</h1>
 					
-					<a href="#hoteles" class="btn">Ver hoteles</a>
+					<p>
+					<Trans i18nKey="home.subtitulo">
+							<b>Reserva hoteles</b> accesibles, comodos y bien ubicados <b>directamente y sin intermediarios.</b>
+						</Trans>
+					</p>
+					<a href="#hoteles" class="btn">{t("home.liga")}</a>
 				</div>
 			</div>
 			<div class="der">
@@ -43,7 +45,7 @@ const hoteles = await Astro.glob("./hoteles/*.mdx");
 								<div class="conte">
 								<h2>{hotel.frontmatter.titulo}</h2>
 							<p>{hotel.frontmatter.extracto} </p>
-							<a href={`hoteles/${hotel.frontmatter.slug}`} class="btnVerde">ver hotel</a>
+							<a href={localizeUrl(`${Astro.url}hoteles/${hotel.frontmatter.slug}`)} class="btnVerde">{t("home.liga-descripcion")}</a>
 							</div>
 						</div>
 					</div>
@@ -57,7 +59,11 @@ const hoteles = await Astro.glob("./hoteles/*.mdx");
 	<img src="/pez-payaso-hoteles-con-encanto.webp" alt="pez payaso" class="pez-zihua">
 	<div class="info">
 		<h3>Zihuatanejo</h3>
-		<p>Pequeña ciudad ubicada frente al océano pacifico <b> a solo 4 horas de Morelia o a 1 hora de la Ciudad de México en avión.</b></p>
+		<p>
+		<Trans i18nKey="zihuayork.zihua">
+				Pequeña ciudad ubicada frente al océano pacifico <b> a solo 4 horas de Morelia o a 1 hora de la Ciudad de México en avión.</b>
+		</Trans>
+		</p>
 	</div>
 	<img src="/iglesia-zihuatanejo-hoteles-con-encanto.webp" alt="Iglesia de Zihuatanejo en el centro">
 </div>
@@ -65,16 +71,26 @@ const hoteles = await Astro.glob("./hoteles/*.mdx");
 <div class="bandeja">
 	<img src="/mariscos-zihuatanejo-hoteles-con-encainto.webp" alt="Gastronomia de zihuatanejo, mariscos">
 	<div class="info">
-		<h3>Playas y una gran gastronomía </h3>
-		<p><b>Ixtapa Zihuatanejo cuenta con hermosas playas</b> ideales para nadar o descansar, algunas playas menos o mas turisticas pero con varias opciones para degustar de mariscos frescos y la gastronomía local.</p>
+		<h3>{t("zihuayork.playa")} </h3>
+		<p>
+			<Trans i18nKey="zihuayork.playastexto">
+
+			<b>Ixtapa Zihuatanejo cuenta con hermosas playas</b> ideales para nadar o descansar, algunas playas menos o mas turisticas pero con varias opciones para degustar de mariscos frescos y la gastronomía local.
+			</Trans>
+			</p>
 	</div>
 </div>
 
 <div class="bandeja">
 	<img src="/pez-angel-hoteles-con-encanto.png" alt="pez angel" class="pez-zihua2">
 	<div class="info">
-		<h3>La belleza de un pueblo pesquero.</h3>
-		<p>Zihuatanejo conserva en sus calles la tranquilidad y la arquitectura de un pequeño pueblo pesquero a pesar de contar con <b>todos los servicios que un turista necesita</b>.</p>
+		<h3> {t("zihuayork.pueblo")} </h3>
+
+		<p>
+			<Trans i18nKey="zihuayork.textopueblo">
+				Zihuatanejo conserva en sus calles la tranquilidad y la arquitectura de un pequeño pueblo pesquero a pesar de contar con <b>todos los servicios que un turista necesita</b>.
+				</Trans>
+				</p>
 	</div>
 	<img src="/zihuatanejo-calles-hoteles-con-encanto.webp" alt="Pueblo pesquero, zihuatanejo">
 </div>

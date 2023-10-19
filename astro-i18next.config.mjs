@@ -2,4 +2,17 @@
 export default {
     defaultLocale: "es",
     locales: ["es", "en", "fr"],
+    routes:{
+      en:{
+        hoteles:{
+          index:"hotels"
+        }
+      },
+      fr:{
+        hoteles:{
+          index:"les-hotels"
+        }
+      }
+
+    }
   };

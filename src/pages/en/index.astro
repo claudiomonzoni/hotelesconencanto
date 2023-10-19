@@ -2,18 +2,17 @@
 import Layout from "../../layouts/Layout.astro";
 import Filtro from "../../components/Filtro.astro";
 import Ofertas from "../../components/Ofertas.astro";
-import Card from "../../components/Card.astro";
-import i18next, { t, changeLanguage } from "i18next";
-import { Trans, HeadHrefLangs, LanguageSelector } from "astro-i18next/components";
+// import Card from "../../components/Card.astro";
+import { t, changeLanguage } from "i18next";
+import { Trans, LanguageSelector } from "astro-i18next/components";
 import { localizeUrl } from "astro-i18next";
-
 
 changeLanguage("en");
 
 const hoteles = await Astro.glob("./hoteles/*.mdx");
 ---
 
-<Layout titulo="Hoteles de Zihuatanejo" descripcion="Reserva hoteles baratos, comodos y bien ubicados directamente con ellos sin intermediarios">
+<Layout>
 	<section id="hero">
 		<div class="hero limite">
 
