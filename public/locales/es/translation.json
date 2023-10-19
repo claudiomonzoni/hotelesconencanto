@@ -30,5 +30,8 @@
     "ofertas":{
       "encabezado":"Ofertas de hoteles en Zihuatanejo",
       "parrafo": "Conoce las <b>ofertas de los hoteles de Zihuatanejo</b> que cada temporada podrás aprovechar para gozar de la playa en tus vacaciones."
+    },
+  "hoteles": {
+    "amenidades": "Amenidades"
     }
   }

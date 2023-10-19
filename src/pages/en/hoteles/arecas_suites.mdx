@@ -1,6 +1,6 @@
 ---
-titulo: Arecas Suites En
-extracto: Ubicado en la zona dorada de la famosa Playa la Ropa /en
+titulo: Arecas Suites
+extracto: Ubicado en la zona dorada de la famosa Playa la Ropa
 slug: arecas-suites
 imagenprincipal: "/hotel/arecas/arecas-suites1.jpg"
 estrellas: 2
@@ -19,10 +19,11 @@ date: 10/19/2022
 
 ---
 
+import { t } from "i18next";
 import Amenidades from '../../../components/Amenidades.astro'
 import Galeria from "../../../components/Galeria.astro";
 
-<Amenidades variable="Amenidades" whatsapp={frontmatter.whatsapp} estrellas={frontmatter.estrellas} matriz={[ "Aire Acondicionado", "Ventilador de techo", "Caja de seguridad", "Alberca", "Cocineta", "Jacuzzi", "Internet", "Asador de carbón", "microondas" ]} > 
+<Amenidades variable={t("hoteles.amenidades")} whatsapp={frontmatter.whatsapp} estrellas={frontmatter.estrellas} matriz={[ "Aire Acondicionado", "Ventilador de techo", "Caja de seguridad", "Alberca", "Cocineta", "Jacuzzi", "Internet", "Asador de carbón", "microondas" ]} > 
 
 
 ## A unos minutos de Playa La Ropa en Zihuatanejo

@@ -30,5 +30,8 @@
     "ofertas":{
       "encabezado":"Hotels deals in Zihuatanejo",
       "parrafo": "Get to know the <b>deals of Zihuatanejo hotels</b> that you can take advantage of each season to enjoy the beach on your vacation."
-    }
+    },
+    "hoteles": {
+      "amenidades": "Amenities"
+      }
   }
