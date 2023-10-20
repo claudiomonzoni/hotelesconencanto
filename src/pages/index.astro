@@ -5,7 +5,7 @@ import Ofertas from "../components/Ofertas.astro";
 import { Image, Picture  } from 'astro:assets';
 // import Card from "../../components/Card.astro";
 import { t, changeLanguage } from "i18next";
-import { Trans, LanguageSelector } from "astro-i18next/components";
+import { Trans } from "astro-i18next/components";
 import { localizeUrl } from "astro-i18next";
 
 changeLanguage("es");
@@ -19,7 +19,7 @@ const hoteles = await Astro.glob("./hoteles/*.mdx");
 
 			<div class="izq">
 				<div class="bandeja">
-					<LanguageSelector showFlag={true} class="languages" />
+					
 					<h1>{t("home.encabezado")}</h1>
 					
 					<p>

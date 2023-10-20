@@ -1,5 +1,6 @@
 ---
 import { t } from "i18next";
+import { LanguageSelector} from "astro-i18next/components";
 ---
 
 <nav class="navbar limite">
@@ -12,6 +13,7 @@ import { t } from "i18next";
         <li><a href="#hoteles" class="selected">{t("menu.hoteles")}</a></li>
         <li><a href="#zihua">Zihuatanejo</a></li>
         <li><a href="#ofertas">{t("menu.ofertas")} </a></li>
+        <li class="select"><LanguageSelector showFlag={false} class="languages" /></li>
     </ul>
 </nav>
 

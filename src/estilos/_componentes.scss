@@ -17,20 +17,25 @@
 }
 .navbar {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  @include cel {
+    flex-wrap: wrap;
+  }
   .logo img {
     width: 100%;
     height: auto;
+    flex: 1 0 40%;
     @include cel {
       flex: 1;
       padding: 1rem;
     }
   }
   ul {
+    flex: 1 0 60%;
     display: inherit;
     align-items: center;
+    justify-content: right;
     @include cel {
       border-top: solid 1px $azul;
       flex: 1;
@@ -39,7 +44,13 @@
     li {
       padding: 2rem;
       @include cel {
-        padding: 1rem 1rem;
+        padding: 1rem 0.5rem;
+      }
+    }
+    @include tableta {
+      flex: 1 0 40%;
+      li {
+        padding: 1rem;
       }
     }
   }
@@ -64,10 +75,6 @@
 .btnVerde {
   @include botones($verde);
 }
-
-
-
-
 
 #hoteles {
   display: flex;
@@ -111,8 +118,8 @@
     @include cel {
       max-width: 100%;
       flex: 1 0 100%;
-     
-      &:nth-child(2n + 2){
+
+      &:nth-child(2n + 2) {
         img {
           grid-column: 2 / -1;
         }
@@ -123,22 +130,21 @@
 
       // flex: 1 0 50%!important;
     }
-
   }
 }
 
-#gale{
+#gale {
   margin-top: $margen;
-  ul{
+  ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
   }
-  li{
+  li {
     flex: 1 0 33%;
     max-width: 33%;
-    padding: .5rem;
-    @include cel{
+    padding: 0.5rem;
+    @include cel {
       flex: 1 0 100%;
       max-width: 100%;
     }
@@ -185,4 +191,53 @@
   // height: 100%;
   // object-fit: cover;
   // }
+}
+
+
+.select select {
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px 20px;
+  outline: 0;
+  border: 0px solid $azul;
+  border-radius: 12px;
+  background: $verde;
+  color: #fff;
+  font-weight: bold;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.select select::-ms-expand {
+  display: none;
+}
+.select select:hover,
+.select select:focus {
+  color: $azul;
+  background: $beige;
+  border: solid 1px $verde;
+}
+.select select:disabled {
+  opacity: 0.2;
+  pointer-events: none;
+}
+.select_arrow {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 0px;
+  height: 0px;
+  border: solid $naranja;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.select select:hover ~ .select_arrow,
+.select select:focus ~ .select_arrow {
+  border-color: $verde;
+}
+.select select:disabled ~ .select_arrow {
+  border-top-color: #cccccc;
 }

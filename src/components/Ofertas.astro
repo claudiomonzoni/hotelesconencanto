@@ -2,7 +2,8 @@
 const ofertas = await Astro.glob('../pages/ofertas/*.mdx')
 import { t } from "i18next";
 import { Trans } from "astro-i18next/components";
-
+// import ImagenOferta from "ofertas.frontmatter.imagenprincipal"
+import {Image} from "astro:assets";
 ---
 
 <div id="ofertas">
@@ -19,7 +20,7 @@ import { Trans } from "astro-i18next/components";
     {ofertas.map(oferta => (
 
      <div class="oferta">
-         <img src={oferta.frontmatter.imagenprincipal} alt={oferta.frontmatter.titulo}>
+         <Image src={oferta.frontmatter.imagenprincipal} width={600} height={400} alt={oferta.frontmatter.titulo} />
          <div class="bandeja-oferta">
              <h3>{oferta.frontmatter.titulo}</h3>
              <p>{oferta.frontmatter.extracto} </p>
