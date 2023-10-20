@@ -9,4 +9,7 @@ import astroI18next from "astro-i18next";
 export default defineConfig({
   site: 'https://hotelesconencanto.com.mx',
   integrations: [ mdx(), sitemap(), robotsTxt({sitemap: true,}), astroI18next()],
+  // experimental: {
+  //   assets: true
+  //  }
 });

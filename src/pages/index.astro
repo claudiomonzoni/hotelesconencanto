@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Filtro from "../components/Filtro.astro";
 import Ofertas from "../components/Ofertas.astro";
+import { Image, Picture  } from 'astro:assets';
 // import Card from "../../components/Card.astro";
 import { t, changeLanguage } from "i18next";
 import { Trans, LanguageSelector } from "astro-i18next/components";
@@ -40,7 +41,8 @@ const hoteles = await Astro.glob("./hoteles/*.mdx");
 
 	{hoteles.map(hotel => (
 			<div class="hotel" data-playa={hotel.frontmatter.enlaplaya} data-aire={hotel.frontmatter.aire} data-estacionamiento={hotel.frontmatter.estacionamiento} data-cerca={hotel.frontmatter.cerca}>
-						<img src={hotel.frontmatter.imagenprincipal} alt={hotel.frontmatter.titulo}>
+					
+						<Image src={hotel.frontmatter.imagenprincipal} format="avif" width={400} height={800}  alt={hotel.frontmatter.titulo} />
 						<div class="bandeja"> 
 								<div class="conte">
 								<h2>{hotel.frontmatter.titulo}</h2>
