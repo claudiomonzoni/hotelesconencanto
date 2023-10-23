@@ -9,7 +9,7 @@ export interface Props{
     lang: number;
 }
 const {web, tel, whatsapp, dir, lat, lang, email} = Astro.props;
-
+import { t } from "i18next";
 
 ---
 
@@ -18,19 +18,19 @@ const {web, tel, whatsapp, dir, lat, lang, email} = Astro.props;
     
 <div id="bandeja">
     <div class="conte">
-        <h3>Contacto</h3>
+        <h3>{t("hoteles.Contacto")} </h3>
         <ul>
             <li>
-                <b>Sitio web:</b><a href={`http://${web}`} target="_blank"> {web}</a>
+                <b>{t("hoteles.Sitio Web")} : </b><a href={`http://${web}`} target="_blank"> {web}</a>
             </li>
             <li>
-                <b>Teléfono:</b> {tel}
+                <b>{t("hoteles.Telefono")} : </b> {tel}
             </li>
             <li>
                 {whatsapp === "false" ? null : <b> Whatsapp: {whatsapp} </b>}
             </li>
             <li>
-                <b>Dirección:</b> {dir}
+                <b>{t("hoteles.Direccion")} : </b> {dir}
             </li>
         </ul>
     </div>

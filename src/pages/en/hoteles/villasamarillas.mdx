@@ -1,0 +1,40 @@
+---
+titulo: Villas Amarillas
+extracto: Family hotel with affordable rates
+slug: villas-amarillas
+imagenprincipal: "/hotel/villas-amarillas/villas-amarillas-fachada.jpg"
+estrellas: 3
+aire: "true"
+estacionamiento: "true"
+cerca: "false"
+enlaplaya: "false"
+web: fb.com/villas.amarillaszih
+telefonos: 755554 3967 / 755111 9181
+whatsapp: 7551366062
+direccion: Paseo de los Hujes No.109 Col. El Hujal
+email: hola@hola.com
+lat: 17.652485
+lang: -101.540960
+date: 10/18/2022
+
+---
+import Amenidades from '../../../components/Amenidades.astro'
+import Galeria from "../../../components/Galeria.astro";
+
+<Amenidades variable="Amenidades" whatsapp={frontmatter.whatsapp} estrellas={frontmatter.estrellas} matriz={[ "Air conditioning", "Fan", "T.V. in room", "T.V. in lobby", "Safe box at reception", "Restaurant", "Swimming pool", "Parking", "Kitchenette", "Internet", " Hot water" ]} > 
+
+
+## Convenience at your fingertips
+
+**Family hotel with affordable rates** that has 18 rooms with all the essential services to enjoy a pleasant stay. It has outdoor spaces such as terraces and a pool where you can enjoy a pleasant experience of comfort.
+
+</Amenidades>
+
+<Galeria>
+- ![Villas amarillas Zihuatanejo](/hotel/villas-amarillas/villas-amarillas-alberca.jpg)
+- ![Villas amarillas Zihuatanejo](/hotel/villas-amarillas/villas-amarillas-fachada.jpg)
+- ![Villas amarillas Zihuatanejo](/hotel/villas-amarillas/villas-amarillas-escalera.jpg)
+- ![Villas amarillas Zihuatanejo](/hotel/villas-amarillas/villas-amarillas-alberca2.jpg)
+- ![Villas amarillas Zihuatanejo](/hotel/villas-amarillas/villas-amarillas-grupos.jpg)
+
+</Galeria>

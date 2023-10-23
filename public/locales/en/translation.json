@@ -32,6 +32,14 @@
       "parrafo": "Get to know the <b>deals of Zihuatanejo hotels</b> that you can take advantage of each season to enjoy the beach on your vacation."
     },
     "hoteles": {
-      "amenidades": "Amenities"
+      "amenidades": "Amenities",
+      "estrellas": "stars",
+      "Hotel": "Hotel",
+      "reserva": "Book now",
+      "Contacto": "Contact",
+      "Sitio Web": "Web site",
+      "Telefono": "Phone",
+      "detalles": "Details",
+      "Direccion": "Address"
       }
   }

@@ -1,0 +1,41 @@
+---
+titulo: Hotel Zihuatanejo Centro
+extracto: A few meters from the bay, in the heart of ZIhuatanejo
+slug: hotel-zihua-centro
+imagenprincipal: "/hotel/zihua-centro/Fachada-1-1024x768-1.jpg"
+estrellas: 3
+aire: "true"
+estacionamiento: "true"
+cerca: "true"
+enlaplaya: "false"
+web: zihuacentro.com
+telefonos: 755554-5330 / 755554-5340 / 755554-2669 / 755554-3661 
+whatsapp: 7551019549
+direccion: Agustín Ramírez No.2 Col. Centro, Zihuatanejo, Guerrero. C.P.40880
+email: reserve@zihuatanejocentro.com
+lat: 17.639436
+lang: -101.557232
+date: 10/4/2022
+
+---
+import Amenidades from '../../../components/Amenidades.astro'
+import Galeria from "../../../components/Galeria.astro";
+
+<Amenidades variable="Amenidades" whatsapp={frontmatter.whatsapp} estrellas={frontmatter.estrellas} matriz={["Parking", "Air Conditioning", "Pool", "Hot Water", "Cable TV", "Internet", "Room Service" ]} > 
+
+
+## Close to everything in Zihuatanejo
+
+**Our 75 rooms** offer you different comfortable accommodation options for all tastes and budgets. We have Standard, Business, Premium rooms and an exclusive Penthouse for those trips that deserve something special.
+
+We have taken care to stay at the forefront for your comfort and safety, so you will find a balance between tradition and functionality. **With more than 35 years of operation** and growth, we are sure that no matter if your trip is for pleasure or business, we will know how to serve you so that your stay is a great experience.
+
+</Amenidades>
+
+<Galeria>
+- ![Alberca Zihuatanejo centro](/hotel/zihua-centro/Alberca-1024x768-1.jpg)
+- ![Alberca Zihuatanejo centro](/hotel/zihua-centro/Fachada-1-1024x768-1.jpg)
+- ![Alberca Zihuatanejo centro](/hotel/zihua-centro/HZC-Penthouse-Vista-2014-1024x705-1.jpg)
+- ![Alberca Zihuatanejo centro](/hotel/zihua-centro/HZC-Premium-King-Room-Edit-1024x703-1.jpg)
+- ![Alberca Zihuatanejo centro](/hotel/zihua-centro/Standard-Kingsize-1024x768-1.jpg)
+</Galeria>

@@ -1,0 +1,40 @@
+---
+titulo: Hotel Rosimar
+extracto: In the downtown of Zihuatanejo
+slug: hotel-rosimar
+imagenprincipal: "/hotel/rosimar/rosimar-fachada.jpg"
+estrellas: 1
+aire: "false"
+estacionamiento: "true"
+cerca: "true"
+enlaplaya: "false"
+web: Sin página o redes sociales
+telefonos: 755554 2139
+whatsapp: "false"
+direccion:  Ejido No.35 Col. Centro, Zihuatanejo, C.P.40880
+email: arecassuites@gmail.com
+lat: 17.640169
+lang: -101.557798
+date: 10/19/2022
+
+---
+
+import Amenidades from '../../../components/Amenidades.astro'
+import Galeria from "../../../components/Galeria.astro";
+
+<Amenidades variable="Amenidades" whatsapp={frontmatter.whatsapp} estrellas={frontmatter.estrellas} matriz={[ "Fan", "T.V. in lobby", "Tel. in lobby", "Hot water" ]} > 
+
+
+## Accommodation one block from the beach
+
+Small hotel with 15 rooms **located in the heart of Zihuatanejo** and a few steps from the main beach and the pier.
+
+</Amenidades>
+
+<Galeria>
+-  ![Hotel Rosimar en Zihuatanejo](/hotel/rosimar/rosimar-balcon.jpg)
+-  ![Hotel Rosimar en Zihuatanejo](/hotel/rosimar/rosimar-entrada.jpg)
+-  ![Hotel Rosimar en Zihuatanejo](/hotel/rosimar/rosimar-fachada.jpg)
+
+
+</Galeria>

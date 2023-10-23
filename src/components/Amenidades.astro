@@ -1,23 +1,24 @@
 ---
 const {variable, estrellas, matriz, whatsapp} = Astro.props
+import { t } from "i18next";
 ---
 <div id="amenidades" class="limite">
 <div class="izq">
 <div class="bandeja">
 
   <h3> {variable}  </h3>
-  {estrellas ? <h4>Hotel {estrellas} estrellas </h4> : ""}
+  {estrellas ? <h4> {t("hoteles.Hotel")} : {estrellas} - { t("hoteles.estrellas")} </h4> : ""}
  
   <ul>
     <!-- <slot />  -->
     {
-      matriz.map(( lista, index ) => {
+      matriz.map(( lista ) => {
         return <li> {lista}</li> 
       } 
       )    
     }
   </ul>
-  {whatsapp ==="false" ? <a href="#contacto" class="btn">reserva ahora</a> : <a href="#reservaciones" class="btn">reserva ahora</a>}
+  {whatsapp ==="false" ? <a href="#contacto" class="btn">{t("hoteles.reserva")}</a> : <a href="#reservaciones" class="btn">{t("hoteles.reserva")}</a>}
   
 </div>
 </div>
