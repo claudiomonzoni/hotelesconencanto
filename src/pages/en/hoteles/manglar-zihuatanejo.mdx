@@ -1,0 +1,41 @@
+---
+titulo: Hotel Manglar Zihuatanejo
+extracto: Excellent location in the center of Zihuatanejo, easily reach most beaches.
+slug: hotel-manglar-zihuatanejo
+imagenprincipal: "/hotel/manglar/h-manglar.webp"
+estrellas: 3
+aire: "true"
+estacionamiento: "false"
+cerca: "true"
+enlaplaya: "false"
+web: N/A
+telefonos: 755125 72552
+whatsapp: 4431366979
+direccion: Calle Cuauhtémoc No. 6, Col. Centro, Zihuatanejo, C.P.40880
+email: hola@hola.com
+lat: 17.642441
+lang: -101.559447
+date: 07/17/2023
+---
+import Amenidades from '../../../components/Amenidades.astro'
+import Galeria from "../../../components/Galeria.astro";
+
+<Amenidades variable="Amenidades" whatsapp={frontmatter.whatsapp} estrellas={frontmatter.estrellas} matriz={[ "Air conditioning", "Fan", "Cable TV in room", "Pool", "Internet" ]} > 
+
+
+## Stay a few steps from the main beach of Zihuatanejo
+
+**We are a family hotel located in the center of Zihuatanejo**, walking distance, 5 minutes from the beach, ideal for your vacation. 23 spacious rooms, equipped with Wifi, cable TV and air conditioning, we also have an outdoor pool.
+
+It provides an ideal environment at all times, whether family or work.
+
+Our excellent location in the center of Zihuatanejo **allows you to easily reach most beaches** and tourist attractions on foot, making Hotel Manglar Zihuatanejo the perfect option for your vacation.
+
+</Amenidades>
+
+<Galeria>
+- ![Holtel manglar en Zihuatanejo](/hotel/manglar/h-manglar.webp)
+- ![Holtel manglar en Zihuatanejo](/hotel/manglar/h-manglar-1.webp)
+- ![Holtel manglar en Zihuatanejo](/hotel/manglar/h-manglar-2.webp)
+- ![Holtel manglar en Zihuatanejo](/hotel/manglar/h-manglar-3.webp)
+</Galeria>

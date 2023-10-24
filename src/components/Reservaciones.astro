@@ -1,120 +1,128 @@
 ---
 export interface Props {
-    whatsapp: string;
-    }
-    const {whatsapp} = Astro.props
+  whatsapp: string;
+}
+const { whatsapp } = Astro.props;
+
+import { t } from "i18next";
 ---
 
 <div id="reservaciones" class="limite">
-    <img src="/pez-payaso-hoteles-con-encanto.webp" alt="Pez payaso zihuatanejo" id="pez">
-    <h3>Reservaciones</h3>
-    <form id="reserva">
-        <label for="nombre">Nombre*
-            <input type="text" id="nombre" placeholder="nombre completo">
-        </label>
-        <label for="adultos">Numero de adulto*
-            <input type="number" id="adultos" placeholder="seleccione">
-        </label>
-        <label for="adultos">Numero de niños*
-            <input type="number" id="ninos" placeholder="menores de 12 años">
-        </label>
-        <label for="llegada">Fecha de llegada*
-            <input type="date" id="llegada" placeholder="seleccione">
-        </label>
-        <label for="salida">Fecha de salida*
-            <input type="date" id="salida" placeholder="seleccione">
-        </label>
-        <!-- <button id="cotizar" class="btn">cotizar</button> -->
-       
-        <a href="#" id="cotizar" class="btn desactivado">cotizar</a>
-    </form>
+  <img
+    src="/pez-payaso-hoteles-con-encanto.webp"
+    alt="Pez payaso zihuatanejo"
+    id="pez"
+  />
+  <h3>{t("reserva.Reservaciones")}</h3>
+  <form id="reserva">
+    <label for="nombre"
+      >{t("reserva.Nombre")}*
+      <input type="text" id="nombre" placeholder={t("reserva.nombre completo")} />
+    </label>
+    <label for="adultos"
+      >{t("reserva.Numero de adultos")}*
+      <input type="number" id="adultos" placeholder={t("reserva.seleccione")} />
+    </label>
+    <label for="adultos"
+      >{t("reserva.Numero de niños")}*
+      <input type="number" id="ninos" placeholder={t("reserva.menores")} />
+    </label>
+    <label for="llegada"
+      >{t("reserva.Fecha de llegada")}*
+      <input type="date" id="llegada" placeholder={t("reserva.seleccione")} />
+    </label>
+    <label for="salida"
+      >{t("reserva.Fecha de salida")}*
+      <input type="date" id="salida" placeholder={t("reserva.seleccione")} />
+    </label>
+    <!-- <button id="cotizar" class="btn">cotizar</button> -->
 
-    <div id="revision">
-        <div class="bandeja">
-            <h4>Usted desea cotizar lo siguiente:</h4>
-        </div>
-       
+    <a href="#" id="cotizar" class="btn desactivado">{t("reserva.cotizar")}</a>
+  </form>
+
+  <div id="revision">
+    <div class="bandeja">
+      <h4>{t("reserva.usted")}</h4>
     </div>
-
+  </div>
 </div>
 <style lang="scss">
-@import "../estilos/_variables.scss";
+  @import "../estilos/_variables.scss";
 
-#reservaciones{
+  #reservaciones {
     background-color: #fff;
     position: relative;
     margin-top: $margen;
-    border-radius:$radio;
+    border-radius: $radio;
     padding: $margen;
     display: flex;
     flex-wrap: wrap;
-    h3{
-        color: $naranja;
+    h3 {
+      color: $naranja;
+      flex: 1 0 100%;
+    }
+    #reserva {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      flex: 2;
+      justify-content: left;
+      label {
+        flex: 1 0 40%;
+        max-width: 40%;
+        @include cel {
+          flex: 1 0 100%;
+          max-width: 100%;
+        }
+      }
+      #cotizar {
+        border: none;
+        flex: 1 0 40%;
+        margin-top: 20px;
+        paddin-top: 0;
+        text-align: center;
+        max-width: 150px;
+        max-height: 50px;
+        font-weight: bold;
+        font-size: 0.9rem;
+      }
+    }
+    #revision {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      border-left: solid 1px $naranja;
+      padding: 2rem;
+      @include cel {
         flex: 1 0 100%;
+      }
+      h4 {
+        color: $azul;
+        font-weight: bold;
+        padding-bottom: 1rem;
+        border-bottom: solid 1px $naranja;
+      }
+      b {
+        color: $naranja;
+      }
+      li {
+        list-style: circle;
+      }
     }
-    #reserva{
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        flex: 2;
-        justify-content: left;
-        label{
-            flex: 1 0 40%;
-            max-width: 40%;
-            @include cel {
-                flex: 1 0 100%;
-                max-width: 100%;
-                }
-        }
-        #cotizar{
-            border: none;
-            flex: 1 0 40%;
-            margin-top: 20px;
-            paddin-top: 0;
-            text-align: center;
-            max-width: 150px;
-            max-height: 50px;
-            font-weight: bold;
-            font-size: .9rem;
-        }
+    #pez {
+      position: absolute;
+      width: 150px;
+      top: -4rem;
+      left: 45%;
     }
-    #revision{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex: 1;
-        border-left: solid 1px $naranja;
-        padding: 2rem;
-        @include cel{
-            flex: 1 0 100%;
-        }
-        h4{
-            color: $azul;
-            font-weight: bold;
-            padding-bottom: 1rem;
-            border-bottom: solid 1px $naranja;
-        }
-        b{
-            color: $naranja;
-        }
-        li{
-            list-style: circle;
-        }
-    }
-    #pez{
-        position: absolute;
-        width: 150px;
-        top: -4rem;
-        left: 45%;
-    }
-}
+  }
 </style>
 <script src="/moment-with-locales.min.js" is:inline></script>
 
-<script define:vars={{whatsapp}}>
-    // import moment from 'moment-with-locales-es6';
-    moment.locale('es')
-
+<script define:vars={{ whatsapp }}>
+// import moment from 'moment-with-locales-es6';
+moment.locale("es");
 
 const revisar = document.querySelector("#revision .bandeja");
 //inputs
@@ -125,7 +133,6 @@ const adultos = document.getElementById("adultos");
 const ninos = document.getElementById("ninos");
 const btncotizar = document.getElementById("cotizar");
 
-
 //user agent
 const ua = navigator.userAgent;
 
@@ -134,32 +141,32 @@ const ua = navigator.userAgent;
 //si es cel app si es pc web.app
 const actualizar = (e) => {
     e.preventDefault();
-    
+
     if (
         nombre.value === "" ||
         llegada.value === "" ||
         salida.value === "" ||
         adultos.value === "" ||
         ninos.value === ""
-        ) {
-            console.log("vacio");
-        } else {
-            btncotizar.classList.remove("desactivado");
-        }
-        
-        //comprobar si es cel o pc
-        let whats = "";
-        if (/Mobile/i.test(ua)) {
-            whats = `https://api.whatsapp.com/send/?phone=${whatsapp}&text=`;
-        } else {
-            whats = `https://web.whatsapp.com/send/?phone=${whatsapp}&text=`;
-        }
-        //obtener las noches
-        moment.locale("es");
-        const llegadaM = moment(llegada.value).format("dddd D MMMM YYYY");
-        const salidaM = moment(salida.value).format("dddd D MMMM YYYY");
-        
-        const mensaje = `
+    ) {
+        console.log("vacio");
+    } else {
+        btncotizar.classList.remove("desactivado");
+    }
+
+    //comprobar si es cel o pc
+    let whats = "";
+    if (/Mobile/i.test(ua)) {
+        whats = `https://api.whatsapp.com/send/?phone=${whatsapp}&text=`;
+    } else {
+        whats = `https://web.whatsapp.com/send/?phone=${whatsapp}&text=`;
+    }
+    //obtener las noches
+    moment.locale("es");
+    const llegadaM = moment(llegada.value).format("dddd D MMMM YYYY");
+    const salidaM = moment(salida.value).format("dddd D MMMM YYYY");
+
+    const mensaje = `
         <hr>
         <h3> Por favor revise los datos para su cotización por whatsapp</h3>
         <hr>
@@ -170,8 +177,8 @@ const actualizar = (e) => {
         Fecha de Salida: <b> ${salidaM} </b> 
 `;
 
-revisar.innerHTML = mensaje;
-envio(whats, llegadaM, salidaM);
+    revisar.innerHTML = mensaje;
+    envio(whats, llegadaM, salidaM);
 };
 
 // fin actualizar
@@ -184,11 +191,9 @@ const envio = (whats, llegadaM, salidaM) => {
     btncotizar.href = url;
 };
 
-
 nombre.addEventListener("focusout", actualizar);
 llegada.addEventListener("focusout", actualizar);
 salida.addEventListener("focusout", actualizar);
-adultos.addEventListener("focusout", actualizar);
-ninos.addEventListener("focusout", actualizar);
-
+  adultos.addEventListener("focusout", actualizar);
+  ninos.addEventListener("focusout", actualizar);
 </script>

@@ -41,5 +41,18 @@
       "Telefono": "Phone",
       "detalles": "Details",
       "Direccion": "Address"
-      }
+      },
+      "reserva": {
+        "Reservaciones": "Reservations",
+        "Nombre": "Name",
+        "Numero de niños": "Number of children",
+        "Numero de adultos": "Number of adults",
+        "Fecha de llegada": "Arrival date",
+        "Fecha de saLida": "Departure date",
+        "usted": "You want to budget:",
+        "cotizar": "send:",
+        "nombre completo": "full name:",
+        "seleccione": "select:",
+        "menores": "under 12 years old"
+        }
   }

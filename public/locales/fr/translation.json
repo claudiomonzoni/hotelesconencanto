@@ -41,5 +41,18 @@
     "Telefono": "Téléphone",
     "detalles": "Détails",
     "Direccion": "Adresse"
-    }
+    },
+    "reserva": {
+      "Reservaciones": "Réservations",
+      "Nombre": "Nom",
+      "Numero de niños": "Nombre d'enfants",
+      "Numero de adultos": "Nombre d'adultes",
+      "Fecha de llegada": "Date d'arrivée",
+      "Fecha de saLida": "Date de sortie",
+      "usted": "Vous souhaitez établir un budget:",
+      "cotizar": "Envoyer:",
+      "nombre completo": "nom complet",
+      "seleccione": "sélectionner",
+      "menores": "moins de 12 ans"
+      }
 }

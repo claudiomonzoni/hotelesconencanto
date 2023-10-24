@@ -41,5 +41,18 @@
       "Telefono": "Teléfono",
       "detalles": "Detalles",
       "Direccion": "Dirección"
-      }
+      },
+      "reserva": {
+        "Reservaciones": "Reservaciones",
+        "Nombre": "Nombre",
+        "Numero de niños": "Numero de niños",
+        "Numero de adultos": "Numero de adultos",
+        "Fecha de llegada": "Fecha de llegada",
+        "Fecha de saLida": "Fecha de salida",
+        "usted": "Usted desea cotizar:",
+        "cotizar": "cotizar:",
+        "nombre completo": "nombre completo",
+        "seleccione": "seleccione:",
+        "menores": "menores de 12 años"
+        }
   }

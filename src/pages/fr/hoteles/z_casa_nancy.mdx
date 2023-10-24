@@ -1,0 +1,42 @@
+---
+titulo: Casa Nancy
+extracto: Hôtel économique à Zihuatanejo
+slug: casa-nancy
+imagenprincipal: "/hotel/casa-nancy/hotel-casa-nancy5.jpg"
+estrellas: 1
+aire: "false"
+estacionamiento: "true"
+cerca: "false"
+enlaplaya: "false"
+web: fb.com/profile.php?id=100068880203288
+telefonos: 755554 2123
+whatsapp: "false"
+direccion:  Paseo el Cantil No.6 Col. Lazaro Cardenas Zihuatanejo, Guerrero. C.P.40880
+email: arecassuites@gmail.com
+lat: 17.636103
+lang: -101.565954
+date: 10/19/2022
+
+---
+
+import Amenidades from '../../../components/Amenidades.astro'
+import Galeria from "../../../components/Galeria.astro";
+
+<Amenidades variable="Amenidades" whatsapp={frontmatter.whatsapp} estrellas={frontmatter.estrellas} matriz={[ "Ventilateur", "Télévision par câble", "Piscine", "Tél. dans le hall", "Coffre-fort à la réception", "Parking", "Kitchenette" ]} > 
+
+
+## Près de la jetée de Zihuatanejo
+
+**Petit hôtel économique à 5 minutes de la jetée** et de la plage principale du centre-ville de Zihuatanejo, idéal pour les voyageurs au budget serré mais souhaitant séjourner près de la baie de Zihuatanejo.
+
+
+</Amenidades>
+
+<Galeria>
+-  ![Hotel Casa Nancy en Zihuatanejo](/hotel/casa-nancy/hotel-casa-nancy1.jpg)
+-  ![Hotel Casa Nancy en Zihuatanejo](/hotel/casa-nancy/hotel-casa-nancy2.jpg)
+-  ![Hotel Casa Nancy en Zihuatanejo](/hotel/casa-nancy/hotel-casa-nancy3.jpg)
+-  ![Hotel Casa Nancy en Zihuatanejo](/hotel/casa-nancy/hotel-casa-nancy4.jpg)
+-  ![Hotel Casa Nancy en Zihuatanejo](/hotel/casa-nancy/hotel-casa-nancy5.jpg)
+
+</Galeria>
