@@ -44,7 +44,8 @@
     li {
       padding: 2rem;
       @include cel {
-        padding: 1rem 0.5rem;
+        padding: 1rem 0.4rem;
+        font-size: .9rem;
       }
     }
     @include tableta {

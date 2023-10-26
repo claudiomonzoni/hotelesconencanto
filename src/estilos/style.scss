@@ -180,3 +180,12 @@ input{
   opacity: 0.2;
   pointer-events: none;
 }
+#vuelos{
+  span{
+    color: $azul;
+  }
+  padding: 4rem 0 3rem 0;
+  .bandeja{
+    text-align: center;
+  }
+}

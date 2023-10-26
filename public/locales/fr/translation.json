@@ -54,5 +54,9 @@
       "nombre completo": "nom complet",
       "seleccione": "sélectionner",
       "menores": "moins de 12 ans"
+      },
+      "vuelos": {
+        "h2": "<h2>Liaisons aériennes vers <br> <span>Ixtapa Zihuatanejo</span></h2>",
+        "parrafo": "<p>Ce sont les villes d'Amérique du Nord où vous pouvez prendre un avion et vous rendre à Ixtapa Zihuatanejo. <span><b>*Vols uniquement par saison </b></span></p>"
       }
 }

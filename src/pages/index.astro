@@ -1,16 +1,18 @@
 ---
+let lang = i18next.language;
+const rutaOfertas = `../components/Ofertas${lang}.astro`
 import Layout from "../layouts/Layout.astro";
 import Filtro from "../components/Filtro.astro";
 import Ofertas from "../components/Ofertas.astro";
 import { Image, Picture } from "astro:assets";
 // import Card from "../../components/Card.astro";
-import { t, changeLanguage } from "i18next";
+import i18next, { t, changeLanguage } from "i18next";
 import { Trans } from "astro-i18next/components";
 import { localizeUrl } from "astro-i18next";
-import mapa from "../assets/mapa-vuelos.webp" 
-
+import mapa from "../assets/mapa-vuelos.webp";
 changeLanguage("es");
 
+console.log(rutaOfertas)
 const hoteles = await Astro.glob("./hoteles/*.mdx");
 ---
 
@@ -142,25 +144,27 @@ const hoteles = await Astro.glob("./hoteles/*.mdx");
         alt="Pueblo pesquero, zihuatanejo"
       />
     </div>
-    <div class="bandeja" id="vuelos">
-      <Trans i18nKey="mapa.h2">
-        <h2>Conexiones aéras hacia Ixtapa Zihuatanejo</h2>
-      </Trans>
+  </div>
+  <div class="limite" id="vuelos">
+    <Trans i18nKey="vuelos.h2">
+      <h2>Conexiones aéras hacia <br> <span>Ixtapa Zihuatanejo</span></h2>
+    </Trans>
 
-      <Trans i18nKey="mapa.parrafo">
-        <p>
-          Estas son la ciudades de Norte America donde puedes tomar un avión y
-          viajar a Ixtapa Zihuatanejo
-        </p>
-      </Trans>
-    </div>
+    <Trans i18nKey="vuelos.parrafo">
+      <p>
+        Estas son la ciudades de Norte America donde puedes tomar un avión y
+        viajar a Ixtapa Zihuatanejo
+      </p>
+    </Trans>
+  <div class="bandeja">
     <Picture
-      src={mapa}
-      format="avif"
-      width={mapa.width}
-      height={mapa.height}
-      alt="vuelos hacia ixtapa zihuatanejo"
-    />
+    src={mapa}
+    format="avif"
+    width={mapa.width}
+    height={mapa.height}
+    alt="vuelos hacia ixtapa zihuatanejo"
+  />
+  </div>
   </div>
 
   <Ofertas />

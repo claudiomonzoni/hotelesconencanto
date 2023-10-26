@@ -54,5 +54,9 @@
         "nombre completo": "full name:",
         "seleccione": "select:",
         "menores": "under 12 years old"
+        },
+        "vuelos": {
+          "h2": "<h2>Air connections<br> to Ixtapa Zihuatanejo</h2>",
+          "parrafo": "<p>This are the North American cities that have flights to Ixtapa Zihuatanejo. <span><b>*Flights only per season </b></span></p>"
         }
   }

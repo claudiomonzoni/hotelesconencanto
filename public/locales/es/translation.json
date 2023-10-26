@@ -5,8 +5,8 @@
     },
     "home": {
       "encabezado": "Hoteles de Zihuatanejo",
-      "subtitulo": "<b>Reserva hoteles</b>accesibles, comodos y bien ubicados <b>directamente y sin intermediarios.</b>",
-      "liga":"check hotels",
+      "subtitulo": "<b>Reserva hoteles</b> accesibles, comodos y bien ubicados <b>directamente y sin intermediarios.</b>",
+      "liga":"ver hoteles",
       "liga-descripcion":"ver hoteles"
     }, 
     "filtro":{
@@ -54,5 +54,9 @@
         "nombre completo": "nombre completo",
         "seleccione": "seleccione:",
         "menores": "menores de 12 años"
+        },
+        "vuelos": {
+          "h2": "<h2>Conexiones aéreas hacia <br> <span>Ixtapa Zihuatanejo</span></h2>",
+          "parrafo": "<p>Estas son la ciudades de Norteamérica donde puedes viajar a Ixtapa Zihuatanejo por avión. <span><b>*Vuelos solo por temporada </b></span></p>"
         }
   }

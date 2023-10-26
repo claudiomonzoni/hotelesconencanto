@@ -7,6 +7,7 @@ import { Image, Picture } from "astro:assets";
 import { t, changeLanguage } from "i18next";
 import { Trans } from "astro-i18next/components";
 import { localizeUrl } from "astro-i18next";
+import mapa from "../../assets/mapa-vuelos.webp";
 
 changeLanguage("en");
 
@@ -14,107 +15,174 @@ const hoteles = await Astro.glob("./hoteles/*.mdx");
 ---
 
 <Layout>
-	<section id="hero">
-		<div class="hero limite">
+  <section id="hero">
+    <div class="hero limite">
+      <div class="izq">
+        <div class="bandeja">
+          <h1>{t("home.encabezado")}</h1>
 
-			<div class="izq">
-				<div class="bandeja">
-					
-					<h1>{t("home.encabezado")}</h1>
-					
-					<p>
-					<Trans i18nKey="home.subtitulo">
-							<b>Reserva hoteles</b> accesibles, comodos y bien ubicados <b>directamente y sin intermediarios.</b>
-						</Trans>
-					</p>
-					<a href="#hoteles" class="btn">{t("home.liga")}</a>
-				</div>
-			</div>
-			<div class="der">
-				<img src="/hoteles-de-zihuatanejo-economicos-hero-image.webp" alt="Hoteles de Ixtapa Zihuatanejo">
-			</div>
-		</div>
-	</section>
-	<Filtro></Filtro>
+          <p>
+            <Trans i18nKey="home.subtitulo">
+              <b>Reserva hoteles</b> accesibles, comodos y bien ubicados <b
+                >directamente y sin intermediarios.</b
+              >
+            </Trans>
+          </p>
+          <a href="#hoteles" class="btn">{t("home.liga")}</a>
+        </div>
+      </div>
+      <div class="der">
+        <img
+          src="/hoteles-de-zihuatanejo-economicos-hero-image.webp"
+          alt="Hoteles de Ixtapa Zihuatanejo"
+        />
+      </div>
+    </div>
+  </section>
+  <Filtro />
 
-	<div id="hoteles" class="limite">
+  <div id="hoteles" class="limite">
+    {
+      hoteles.map((hotel) => (
+        <div
+          class="hotel"
+          data-playa={hotel.frontmatter.enlaplaya}
+          data-aire={hotel.frontmatter.aire}
+          data-estacionamiento={hotel.frontmatter.estacionamiento}
+          data-cerca={hotel.frontmatter.cerca}
+        >
+          <Image
+            src={hotel.frontmatter.imagenprincipal}
+            format="avif"
+            width={400}
+            height={800}
+            alt={hotel.frontmatter.titulo}
+          />
+          <div class="bandeja">
+            <div class="conte">
+              <h2>{hotel.frontmatter.titulo}</h2>
+              <p>{hotel.frontmatter.extracto} </p>
+              <a
+                href={localizeUrl(
+                  `${Astro.url}hoteles/${hotel.frontmatter.slug}`
+                )}
+                class="btnVerde"
+              >
+                {t("home.liga-descripcion")}
+              </a>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
 
-	{hoteles.map(hotel => (
-			<div class="hotel" data-playa={hotel.frontmatter.enlaplaya} data-aire={hotel.frontmatter.aire} data-estacionamiento={hotel.frontmatter.estacionamiento} data-cerca={hotel.frontmatter.cerca}>
-					
-						<Image src={hotel.frontmatter.imagenprincipal} format="avif" width={400} height={800}  alt={hotel.frontmatter.titulo} />
-						<div class="bandeja"> 
-								<div class="conte">
-								<h2>{hotel.frontmatter.titulo}</h2>
-							<p>{hotel.frontmatter.extracto} </p>
-							<a href={localizeUrl(`${Astro.url}hoteles/${hotel.frontmatter.slug}`)} class="btnVerde">{t("home.liga-descripcion")}</a>
-							</div>
-						</div>
-					</div>
-	))}
-		
-		
-	</div>
+  <div id="zihua" class="limite">
+    <div class="bandeja">
+      <img
+        src="/pez-payaso-hoteles-con-encanto.webp"
+        alt="pez payaso"
+        class="pez-zihua"
+      />
+      <div class="info">
+        <h3>Zihuatanejo</h3>
+        <p>
+          <Trans i18nKey="zihuayork.zihua">
+            Pequeña ciudad ubicada frente al océano pacifico <b>
+              a solo 4 horas de Morelia o a 1 hora de la Ciudad de México en
+              avión.</b
+            >
+          </Trans>
+        </p>
+      </div>
+      <img
+        src="/iglesia-zihuatanejo-hoteles-con-encanto.webp"
+        alt="Iglesia de Zihuatanejo en el centro"
+      />
+    </div>
 
-	<div id="zihua" class="limite">
-<div class="bandeja">
-	<img src="/pez-payaso-hoteles-con-encanto.webp" alt="pez payaso" class="pez-zihua">
-	<div class="info">
-		<h3>Zihuatanejo</h3>
-		<p>
-		<Trans i18nKey="zihuayork.zihua">
-				Pequeña ciudad ubicada frente al océano pacifico <b> a solo 4 horas de Morelia o a 1 hora de la Ciudad de México en avión.</b>
-		</Trans>
-		</p>
-	</div>
-	<img src="/iglesia-zihuatanejo-hoteles-con-encanto.webp" alt="Iglesia de Zihuatanejo en el centro">
-</div>
+    <div class="bandeja">
+      <img
+        src="/mariscos-zihuatanejo-hoteles-con-encainto.webp"
+        alt="Gastronomia de zihuatanejo, mariscos"
+      />
+      <div class="info">
+        <h3>{t("zihuayork.playa")}</h3>
+        <p>
+          <Trans i18nKey="zihuayork.playastexto">
+            <b>Ixtapa Zihuatanejo cuenta con hermosas playas</b> ideales para
+            nadar o descansar, algunas playas menos o mas turisticas pero con
+            varias opciones para degustar de mariscos frescos y la gastronomía
+            local.
+          </Trans>
+        </p>
+      </div>
+    </div>
 
-<div class="bandeja">
-	<img src="/mariscos-zihuatanejo-hoteles-con-encainto.webp" alt="Gastronomia de zihuatanejo, mariscos">
-	<div class="info">
-		<h3>{t("zihuayork.playa")} </h3>
-		<p>
-			<Trans i18nKey="zihuayork.playastexto">
+    <div class="bandeja">
+      <img
+        src="/pez-angel-hoteles-con-encanto.png"
+        alt="pez angel"
+        class="pez-zihua2"
+      />
+      <div class="info">
+        <h3>{t("zihuayork.pueblo")}</h3>
 
-			<b>Ixtapa Zihuatanejo cuenta con hermosas playas</b> ideales para nadar o descansar, algunas playas menos o mas turisticas pero con varias opciones para degustar de mariscos frescos y la gastronomía local.
-			</Trans>
-			</p>
-	</div>
-</div>
+        <p>
+          <Trans i18nKey="zihuayork.textopueblo">
+            Zihuatanejo conserva en sus calles la tranquilidad y la arquitectura
+            de un pequeño pueblo pesquero a pesar de contar con <b
+              >todos los servicios que un turista necesita</b
+            >.
+          </Trans>
+        </p>
+      </div>
+      <img
+        src="/zihuatanejo-calles-hoteles-con-encanto.webp"
+        alt="Pueblo pesquero, zihuatanejo"
+      />
+    </div>
+  </div>
+  <div class="limite" id="vuelos">
+    <Trans i18nKey="vuelos.h2">
+      <h2>Conexiones aéras hacia <br> <span>Ixtapa Zihuatanejo</span></h2>
+    </Trans>
 
-<div class="bandeja">
-	<img src="/pez-angel-hoteles-con-encanto.png" alt="pez angel" class="pez-zihua2">
-	<div class="info">
-		<h3> {t("zihuayork.pueblo")} </h3>
+    <Trans i18nKey="vuelos.parrafo">
+      <p>
+        Estas son la ciudades de Norte America donde puedes tomar un avión y
+        viajar a Ixtapa Zihuatanejo
+      </p>
+    </Trans>
+  <div class="bandeja">
+    <Picture
+    src={mapa}
+    format="avif"
+    width={mapa.width}
+    height={mapa.height}
+    alt="vuelos hacia ixtapa zihuatanejo"
+  />
+  </div>
+  </div>
 
-		<p>
-			<Trans i18nKey="zihuayork.textopueblo">
-				Zihuatanejo conserva en sus calles la tranquilidad y la arquitectura de un pequeño pueblo pesquero a pesar de contar con <b>todos los servicios que un turista necesita</b>.
-				</Trans>
-				</p>
-	</div>
-	<img src="/zihuatanejo-calles-hoteles-con-encanto.webp" alt="Pueblo pesquero, zihuatanejo">
-</div>
+  <Ofertas />
 
-	</div>
-	<Ofertas />
-</Layout>
-
-
-<script>
-	import gsap from "gsap"
-    let tl = gsap.timeline({repeat:0})
-  tl.from(" .izq ,bandeja ",
-  {
-    y:200,
-    opacity: 0,
-    duration: 1.5 //1 segundo
-  })
-  tl.from (".der img",{
-    y:100,
-    opacity: 0,
-    duration: 1.5
-  }, "-=.5")
-  
+  <script>
+    import gsap from "gsap";
+    let tl = gsap.timeline({ repeat: 0 });
+    tl.from(" .izq ,bandeja ", {
+      y: 200,
+      opacity: 0,
+      duration: 1.5, //1 segundo
+    });
+    tl.from(
+      ".der img",
+      {
+        y: 100,
+        opacity: 0,
+        duration: 1.5,
+      },
+      "-=.5"
+    );
   </script>
+</Layout>
