@@ -1,16 +1,24 @@
 ---
+let lang = i18next.language;
+const rutaOfertas = `../components/Ofertas${lang}.astro`;
 import Layout from "../../layouts/Layout.astro";
 import Filtro from "../../components/Filtro.astro";
-import Ofertas from "../../components/Ofertas.astro";
 import { Image, Picture } from "astro:assets";
 // import Card from "../../components/Card.astro";
-import { t, changeLanguage } from "i18next";
+import i18next, { t, changeLanguage } from "i18next";
 import { Trans } from "astro-i18next/components";
 import { localizeUrl } from "astro-i18next";
 import mapa from "../../assets/mapa-vuelos.webp";
+import Ofertas from "../../components/OfertasFr.astro";
 
 changeLanguage("fr");
 
+// if(lang === "en"){
+//   import Ofertas from "../components/OfertasEn.astro";
+//   console.log("ingles")
+// }
+console.log(lang);
+// changeLanguage("es");
 const hoteles = await Astro.glob("./hoteles/*.mdx");
 ---
 

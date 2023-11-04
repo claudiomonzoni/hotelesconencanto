@@ -1,18 +1,29 @@
 ---
-import { t } from "i18next";
+import i18next,{ t } from "i18next";
 import { LanguageSelector} from "astro-i18next/components";
+let lang = i18next.language;
+if(lang == "es"){
+  lang = "/";
+}
+if(lang == "en"){
+  lang = "/en/";
+}
+if(lang == "fr"){
+  lang = "/fr/";
+}
+
 ---
 
 <nav class="navbar limite">
     <div class="logo">
-        <a href="/">
+        <a href={lang}>
             <img src="/hoteles-con-encanto-logo.svg" alt="Hoteles con encanto de zihuatanejo">
         </a>
     </div>
     <ul>
-        <li><a href="#hoteles" class="selected">{t("menu.hoteles")}</a></li>
-        <li><a href="#zihua">Zihuatanejo</a></li>
-        <li><a href="#ofertas">{t("menu.ofertas")} </a></li>
+        <li><a href=`${lang}#hoteles` class="selected">{t("menu.hoteles")}</a></li>
+        <li><a href=`${lang}#zihua`>Zihuatanejo</a></li>
+        <li><a href=`${lang}#ofertas`>{t("menu.ofertas")} </a></li>
         <li class="select"><LanguageSelector showFlag={false} class="languages" /></li>
     </ul>
 </nav>
