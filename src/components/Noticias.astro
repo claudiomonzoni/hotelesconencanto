@@ -1,0 +1,30 @@
+---
+const { lang } = Astro.props;
+const noticiasData = await fetch(
+  //   `https://www.jpbarras.ch/admin/api/content/items/Offres?locale=${lang}`,
+  `http://hotelesconencanto.com.mx/cms/api/content/items/Noticias?locale=${lang}`,
+  {
+    method: "GET",
+    headers: {
+      "api-key": "API-252a96dd090d6064751217db3c4855b7f87be22e",
+    },
+  }
+);
+const noticias = await noticiasData.json();
+const title = noticias[0].titulo;
+const url = 'https://hotelesconencanto.com.mx/cms/storage/uploads'
+
+---
+
+<div id="noticias">
+  {
+    noticias.map((nota, key) => (
+      <div class="noticia" id = {key}>
+        <img src={`${url}${nota.imagen.path}`} alt={nota.titulo} />
+        <h2>{nota.titulo}</h2>
+        <p>{nota.texto}</p>
+      </div>
+    ))
+  }
+</div>
+

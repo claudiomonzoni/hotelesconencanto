@@ -12,13 +12,18 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^1.1.2",
+    "@astrojs/react": "^3.0.4",
     "@astrojs/sitemap": "^1.0.0",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
     "astro": "^3.3.2",
-    "astro-i18next": "^1.0.0-beta.13",
+    "astro-i18next": "^1.0.0-beta.21",
     "astro-robots-txt": "^0.3.10",
     "gsap": "^3.11.3",
     "leaflet": "^1.9.2",
     "moment-with-locales-es6": "^1.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "sass": "^1.54.9"
   }
 }
