@@ -1,4 +1,5 @@
 ---
+import { Image, Picture } from "astro:assets";
 const { lang } = Astro.props;
 const noticiasData = await fetch(
   //   `https://www.jpbarras.ch/admin/api/content/items/Offres?locale=${lang}`,
@@ -12,19 +13,65 @@ const noticiasData = await fetch(
 );
 const noticias = await noticiasData.json();
 const title = noticias[0].titulo;
-const url = 'https://hotelesconencanto.com.mx/cms/storage/uploads'
-
+const url = "https://hotelesconencanto.com.mx/cms/storage/uploads";
 ---
 
 <div id="noticias">
-  {
-    noticias.map((nota, key) => (
-      <div class="noticia" id = {key}>
-        <img src={`${url}${nota.imagen.path}`} alt={nota.titulo} />
-        <h2>{nota.titulo}</h2>
-        <p>{nota.texto}</p>
-      </div>
-    ))
-  }
+  <div class="limite">
+    {
+      noticias.map((nota, key) => (
+        <div class="noticia" id={key}>
+          <Picture
+            src={`${url}${nota.imagen.path}`}
+            width={nota.imagen.width}
+            formats={["avif", "webp"]}
+            height={nota.imagen.height}
+            alt={nota.titulo}
+          />
+          <h2>{nota.titulo}</h2>
+          <p>{nota.texto}</p>
+        </div>
+      ))
+    }
+  </div>
 </div>
 
+<style lang="scss">
+  @import "../estilos/_variables.scss";
+  #noticias {
+    background: $naranja;
+    background: linear-gradient(
+      0deg,
+      $naranja 0%,
+      $naranja 72%,
+      rgba(247, 247, 247, 0) 72%
+    );
+    @include cel{
+        background: linear-gradient(
+      0deg,
+      $naranja 0%,
+      $naranja 86%,
+      rgba(247, 247, 247, 0) 86%
+    );
+    }
+    .limite {
+      display: flex;
+      gap: 1rem;
+      @include cel{
+        flex-wrap: wrap;
+      }
+    }
+    .noticia {
+      h2,
+      p {
+        color: #fff;
+      }
+      padding: 2rem;
+      flex: 1;
+      img {
+        aspect-ratio: 3/2;
+        object-fit: cover;
+      }
+    }
+  }
+</style>
