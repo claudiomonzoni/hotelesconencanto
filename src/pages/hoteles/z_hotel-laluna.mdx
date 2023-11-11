@@ -1,0 +1,42 @@
+---
+titulo: Hotel La Luna
+extracto: Cerca del aeropuerto, sobre la carretera nacional
+slug: hotel-la-luna
+imagenprincipal: "/hotel/la-luna/la-luna-zihuatanejo.webp"
+estrellas: 2
+aire: "false"
+estacionamiento: "true"
+cerca: "true"
+enlaplaya: "false"
+web: https://www.facebook.com/profile.php?id=100083033216276
+telefonos: 755 171 9773
+whatsapp: 755111 9181
+direccion:  Carretera Acapulco-Zihuatanejo, a unos metros de entrar a Zihuatanejo, C.P.40880
+email: hotellalunazihua@gmail.com
+lat: 17.646351
+lang: -101.518105
+date: 10/19/2022
+
+---
+
+import Amenidades from '../../components/Amenidades.astro'
+import Galeria from "../../components/Galeria.astro";
+
+<Amenidades variable="Amenidades" whatsapp={frontmatter.whatsapp} estrellas={frontmatter.estrellas} matriz={[ "Wi-fi", "T.V.", "Agua caliente" ]} > 
+
+
+## Hospedaje cerca del aeropuerto
+
+Pequeño hotel ubicado entre Zihuatanejo y el aeropuerto internacional de Ixtapa Zihuatanejo.
+
+
+</Amenidades>
+
+<Galeria>
+-  ![Hotel la-luna en Zihuatanejo](/hotel/la-luna/la-luna-zihuatanejo-1.webp)
+-  ![Hotel la-luna en Zihuatanejo](/hotel/la-luna/la-luna-zihuatanejo-2.webp)
+-  ![Hotel la-luna en Zihuatanejo](/hotel/la-luna/la-luna-zihuatanejo-3.webp)
+-  ![Hotel la-luna en Zihuatanejo](/hotel/la-luna/la-luna-zihuatanejo-4.webp)
+
+
+</Galeria>
