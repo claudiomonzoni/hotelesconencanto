@@ -10,6 +10,7 @@ import { localizeUrl } from "astro-i18next";
 import mapa from "../../assets/mapa-vuelos.webp";
 import Ofertas from "../../components/Ofertas.astro";
 import Noticias from "../../components/Noticias.astro";
+import BannerHero from "../../components/BannerHero.astro";
 
 changeLanguage("fr");
 
@@ -52,7 +53,8 @@ const hoteles = await Astro.glob("./hoteles/*.mdx");
       </div>
     </div>
   </section>
-  <Noticias  lang={lang} />
+  <!-- <Noticias  lang={lang} /> -->
+     <BannerHero />
   <Filtro />
 
   <div id="hoteles" class="limite">

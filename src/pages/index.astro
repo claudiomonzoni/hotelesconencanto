@@ -4,13 +4,14 @@ import Filtro from "../components/Filtro.astro";
 import { Image, Picture } from "astro:assets";
 // import Card from "../../components/Card.astro";
 import i18next, { t, changeLanguage } from "i18next";
-const lang = "default";
+// const lang = Astro.currentLocale;
 import { Trans } from "astro-i18next/components";
 import { localizeUrl } from "astro-i18next";
 import mapa from "../assets/mapa-vuelos.webp";
 import Ofertas from "../components/Ofertas.astro";
 // import Notas from "../components/Notas";
 import Noticias from "../components/Noticias.astro";
+import BannerHero from "../components/BannerHero.astro";
 
 changeLanguage("es");
 
@@ -55,8 +56,9 @@ const hoteles = await Astro.glob("./hoteles/*.mdx");
   </section>
 
   
-  <Noticias lang={lang} />
+  <!-- <Noticias lang={lang} /> -->
   
+  <BannerHero />
   <Filtro />
 
   <div id="hoteles" class="limite">
