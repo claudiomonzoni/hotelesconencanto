@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Filtro from "../components/Filtro.astro";
 import { Image, Picture } from "astro:assets";
-// import Card from "../../components/Card.astro";
+
 import i18next, { t, changeLanguage } from "i18next";
 // const lang = Astro.currentLocale;
 import { Trans } from "astro-i18next/components";
@@ -39,8 +39,7 @@ const hoteles = await Astro.glob("./hoteles/*.mdx");
           <p>
             <Trans i18nKey="home.subtitulo">
               <b>Reserva hoteles</b> accesibles, comodos y bien ubicados <b
-                >directamente y sin intermediarios.</b
-              >
+                >directamente y sin intermediarios.</b>
             </Trans>
           </p>
           <a href="#hoteles" class="btn">{t("home.liga")}</a>
